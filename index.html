@@ -171,6 +171,52 @@
         font-size: 20px;
         background-color: lemonchiffon;
       }
+
+      .summary-section {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .summary-card {
+        background-color: #fffdf7;
+        border: 1px solid #f2d9b5;
+        border-radius: 16px;
+        padding: 16px;
+        text-align: left;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .summary-card h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        color: #6d4c41;
+      }
+
+      .summary-card p {
+        margin: 0 0 10px;
+        color: #5f5f5f;
+        line-height: 1.6;
+      }
+
+      .summary-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .summary-links a {
+        display: inline-block;
+        background-color: #fce7f3;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.9em;
+      }
     </style>
   </head>
 
@@ -230,6 +276,67 @@
 
     <main>
       <!-- 3. 메인 : 아티클, 섹션 -->
+      <article class="summary-section">
+        <h2>📚 프로젝트 요약 페이지</h2>
+        <p>이 사이트는 HTML, CSS, JavaScript, 피그마 실습과 미니 프로젝트를 한눈에 볼 수 있도록 정리한 학습 포트폴리오입니다.</p>
+
+        <div class="summary-grid">
+          <section class="summary-card">
+            <h3>01. HTML 기초</h3>
+            <p>문서 구조, 제목·문단 태그, 이미지와 미디어, 경로 연결 실습을 확인할 수 있습니다.</p>
+            <div class="summary-links">
+              <a href="01/ex1-4.html">제목태그</a>
+              <a href="01/ex1-38.html">음악재생</a>
+              <a href="01/ex1-39.html">영상감상</a>
+            </div>
+          </section>
+
+          <section class="summary-card">
+            <h3>02. CSS 디자인</h3>
+            <p>내부·외부 스타일시트, 레이아웃, 색상과 폰트, 퀴즈 과제를 통해 스타일링을 익힐 수 있습니다.</p>
+            <div class="summary-links">
+              <a href="02/ex2-1.html">CSS 적용</a>
+              <a href="02/layout1.html">레이아웃</a>
+              <a href="02/quiz6.html">퀴즈</a>
+            </div>
+          </section>
+
+          <section class="summary-card">
+            <h3>03. JavaScript</h3>
+            <p>콘솔 출력, DOM 조작, 클릭 이벤트와 간단한 동작을 실습한 예제들이 모여 있습니다.</p>
+            <div class="summary-links">
+              <a href="03/ex3-1.html">자바스크립트</a>
+              <a href="03/ex3-15.html">예제</a>
+              <a href="03/ex3-16.html">응용</a>
+            </div>
+          </section>
+
+          <section class="summary-card">
+            <h3>실습 & 미니프로젝트</h3>
+            <p>QR 코드, 밥·음식 소개, 피그마로 만든 카페 페이지 등 다양한 실습 결과를 확인할 수 있습니다.</p>
+            <div class="summary-links">
+              <a href="practice/0513/qr.html">QR</a>
+              <a href="practice/hungry/ar.html">밥</a>
+              <a href="figma/cafe.html">CAFEIN</a>
+            </div>
+          </section>
+
+          <section class="summary-card">
+            <h3>자료 & 가이드</h3>
+            <p>HTML 기본 개념, 폼 가이드, 클래스·아이디 설명 등 학습 참고자료를 정리해 두었습니다.</p>
+            <div class="summary-links">
+              <a href="docs/html_basics_for_elementary.html">HTML 가이드</a>
+              <a href="docs/form_guide.html">폼 가이드</a>
+              <a href="docs/ex03-class-id-guide.html">클래스/아이디</a>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <br />
+      <hr />
+      <br />
+
       <article>
         <h2>🤔 0518 과제</h2>
         <a href="path/img/1.html">
