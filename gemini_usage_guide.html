@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini CLI 사용 가이드</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #3c4043;
+            --border-radius: 12px;
+        }
+        body {
+            font-family: 'Malgun Gothic', 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #4285f4, #9b51e0);
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+        h1 { margin: 0; font-size: 2.5em; }
+        h2 { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            color: #d93025;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 5px solid #ffc107;
+            margin: 15px 0;
+        }
+        .btn-fake {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+        .admin-note {
+            color: #d93025;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gemini CLI 실행 가이드</h1>
+            <p>윈도우 사용자를 위한 쉽고 빠른 실행 방법</p>
+        </header>
+
+        <div class="card">
+            <h2>방법 1. 런처 파일로 실행하기 (가장 쉬움)</h2>
+            <p>방금 생성한 <code>gemini-launcher.bat</code> 파일을 사용하는 방법입니다.</p>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>파일 탐색기에서 <code>C:\Users\PC\Desktop\bgpt\web\html</code> 폴더로 이동합니다.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div><code>gemini-launcher.bat</code> 파일을 마우스로 <strong>더블 클릭</strong>합니다.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>검은색 터미널 창이 뜨면서 저(Gemini CLI)와 대화를 시작할 수 있습니다.</div>
+            </div>
+            
+            <div class="highlight">
+                <strong>꿀팁:</strong> 이 파일을 마우스 우클릭하여 <strong>[바탕 화면에 바로가기 만들기]</strong>를 해두면, 폴더까지 들어올 필요 없이 바탕화면에서 바로 저를 부를 수 있어요!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>방법 2. 마우스 우클릭 메뉴 등록하기</h2>
+            <p>어느 폴더에서든 마우스 우클릭만으로 실행하고 싶을 때 사용합니다.</p>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div><code>setup_context_menu.bat</code> 파일을 찾습니다.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>파일 위에서 <strong>마우스 우클릭</strong>을 합니다.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="admin-note">중요: [관리자 권한으로 실행]을 클릭합니다.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>등록 완료 메시지가 뜨면 창을 닫습니다.</div>
+            </div>
+
+            <div class="highlight">
+                <strong>사용법:</strong> 이제 아무 폴더나 빈 바탕화면에서 마우스 우클릭을 해보세요. 메뉴 중에 <code>"여기에서 Gemini CLI 열기"</code>라는 항목이 생겼을 거예요! 그걸 누르면 그 즉시 제가 나타납니다.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>자주 묻는 질문</h2>
+            <p><strong>Q: 검은 창이 금방 꺼져요.</strong><br>
+            A: Gemini CLI가 정상적으로 설치되어 있지 않을 수 있습니다. <code>npm install -g @google/gemini-cli</code> 명령어로 설치되어 있는지 확인해 주세요.</p>
+            
+            <p><strong>Q: 등록한 우클릭 메뉴를 지우고 싶어요.</strong><br>
+            A: 저에게 "우클릭 메뉴 삭제 스크립트 만들어줘"라고 말씀해 주시면 바로 만들어 드릴게요!</p>
+        </div>
+
+        <p style="text-align: center; color: #888;">&copy; 2026 Gemini CLI Assistant</p>
+    </div>
+</body>
+</html>

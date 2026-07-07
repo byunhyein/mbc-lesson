@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box-shadow</title>
+    <style>
+      p {
+        display: inline-block;
+        background-color: antiquewhite;
+        padding: 20px;
+        border-radius: 55px 10px;
+      }
+
+      /* box-shadow: X축으로 Npx, Y축으로 NNpx 떨어진 거리에 | 텍스트 색상과 동일한 그림자가 적용 */
+      /* 기준점을 중심으로 - X축 값이 왼쪽으로, Y축 값이 위로 가면 음수의 값이 된다.*/
+      .shadow1 {
+        box-shadow: 8px 15px;
+      }
+      .shadow2 {
+        box-shadow: 8px 15px rgba(0, 0, 50, 0.4);
+        /* 컬러 추가 */
+      }
+      .shadow3 {
+        box-shadow: 8px 15px 8px rgba(0, 0, 50, 0.4);
+        /* X, Y축 값 다음에 세번째 px값을 넣으면 그림자에 blur가 적용이 된다 */
+      }
+
+      .shadow4 {
+        box-shadow: 8px 15px 8px 7px rgba(0, 0, 50, 0.4);
+        /* X, Y축, 블러값 다음에 네번째 px값을 넣으면 그림자의 spread값 (크기) 를 조정할 수 있다 */
+      }
+
+      .shadow5 {
+        box-shadow: 8px 15px 10px inset rgba(0, 0, 50, 0.4);
+        /* X, Y축, 블러값 다음에 inset을 쓰면 내부 그림자가 지정한 그림자 값으로 설정된다 */
+      }
+
+      .shadow6 {
+        box-shadow: -8px -15px 8px 8px darkblue, 8px 15px 8px 8px darkred;
+        /* 그림자 중복 지정하기 */
+      }
+    </style>
+  </head>
+  <body>
+    <p class="shadow1">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow2">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow3">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow4">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow5">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow6">It's impossible not only starting good but also keeping it firm!!</p>
+  </body>
+</html>

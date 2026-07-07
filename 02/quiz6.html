@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 300px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        /* 이거 할때는 딱히 flex는 안써도 되는구낭 */
+      }
+
+      .col {
+        flex-direction: column;
+        /* 와 천재다 그냥 프레임 안에 프레임같은거구나 */
+
+        background-color: white;
+        padding: 0 40px;
+      }
+
+      body {
+        background-color: darkcyan;
+        /* 이게맞냐ㅠ */
+      }    
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="https://placedog.net/samples/29.jpg?155962" alt="" />
+      <div class="container col">
+        <h2>일 분 만큼 먼 시간은 없다.</h2>
+        <h3>- Jim Bishop</h3>
+      </div>
+    </div>
+  </body>
+</html>

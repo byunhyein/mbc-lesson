@@ -1,0 +1,42 @@
+@charset "UTF-8"
+@import url('./font.css');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  background-color: beige;
+  margin-bottom: 20px;
+}
+
+.hdd {
+  color: red;
+  display: none;
+}
+
+.hdd2 {
+  color: rgba(255, 0, 0, 1);
+  background: rgba(0, 0, 0, 1); /* rgba 알파 값으로 조절하는 건 상속 안됨 */
+  opacity: 1; /* opacity로 조절하는 건 상속됨 */
+
+  /* 이렇게 숨기는 건 앞에 공간이 생기네 */
+  /* 맨 뒤의 알파값이 0이면 숨겨지지만, 1만 되어도 바로 보인다! */
+  /* alpha 뿐 아니라 opacity로 불투명도 조절하는 법도 있음 */
+}
+
+.box:nth-of-type(1) p strong
+/* 클래스 box의 1번째 타입의 p 밑에 스트롱 */ {
+  color: red;
+  visibility: visible;
+  /* 약간 시각화, 가지적인 영역인가봄 */
+  visibility: hidden;
+}
+
+/* display none : 공간 없어짐, display : 공간 계산 */
+/* alpha, visibility: 공간 계산이 안 됨. */

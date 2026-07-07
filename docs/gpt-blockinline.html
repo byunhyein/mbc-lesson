@@ -1,0 +1,260 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>블럭 레벨 vs 인라인 레벨</title>
+
+  <style>
+    body {
+      font-family: "Pretendard", sans-serif;
+      background: #f7fbff;
+      margin: 0;
+      padding: 30px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0066cc;
+      background: #dff1ff;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    section {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-top: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #ff6600;
+    }
+
+    .box-demo div {
+      background: #90caf9;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .inline-demo span {
+      background: #ffcc80;
+      padding: 10px;
+      border-radius: 10px;
+      margin-right: 5px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 2px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background: #c8e6c9;
+    }
+
+    .tip {
+      background: #fff8c4;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .emoji {
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧱 블럭 레벨(Block Level) 과 ✏️ 인라인 레벨(Inline Level)</h1>
+
+  <section>
+    <h2>🎈 먼저 쉽게 생각해보자!</h2>
+
+    <p>
+      HTML 태그는 크게 2가지 친구가 있어요!
+    </p>
+
+    <ul>
+      <li>🧱 블럭 레벨 태그 = 혼자 한 줄을 다 차지하는 큰 상자</li>
+      <li>✏️ 인라인 레벨 태그 = 글자처럼 옆으로 붙어있는 작은 친구</li>
+    </ul>
+
+    <div class="tip">
+      🍱 도시락 칸처럼 생각하면 쉬워요!<br />
+      블럭은 "큰 칸", 인라인은 "작은 반찬" 느낌!
+    </div>
+  </section>
+
+  <section>
+    <h2>🧱 블럭 레벨(Block Level)</h2>
+
+    <p>
+      블럭 태그는 <strong>혼자 한 줄을 모두 사용</strong>해요!
+    </p>
+
+    <div class="box-demo">
+      <div>div 태그</div>
+      <div>p 태그</div>
+      <div>h1 태그</div>
+    </div>
+
+    <h3>✅ 특징</h3>
+
+    <ul>
+      <li>📏 가로를 끝까지 차지해요</li>
+      <li>🆕 자동으로 줄바꿈이 돼요</li>
+      <li>📦 큰 상자처럼 사용해요</li>
+      <li>🎨 width, height 설정이 쉬워요</li>
+    </ul>
+
+    <h3>📚 대표적인 블럭 태그 종류</h3>
+
+    <table>
+      <tr>
+        <th>태그</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td>&lt;div&gt;</td>
+        <td>영역 나누기</td>
+      </tr>
+      <tr>
+        <td>&lt;p&gt;</td>
+        <td>문단</td>
+      </tr>
+      <tr>
+        <td>&lt;h1&gt; ~ &lt;h6&gt;</td>
+        <td>제목</td>
+      </tr>
+      <tr>
+        <td>&lt;ul&gt;</td>
+        <td>목록</td>
+      </tr>
+      <tr>
+        <td>&lt;li&gt;</td>
+        <td>목록 아이템</td>
+      </tr>
+      <tr>
+        <td>&lt;section&gt;</td>
+        <td>구역 나누기</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>✏️ 인라인 레벨(Inline Level)</h2>
+
+    <p>
+      인라인 태그는 <strong>글자처럼 옆으로 붙어요!</strong>
+    </p>
+
+    <div class="inline-demo">
+      <span>span</span>
+      <span>a</span>
+      <span>strong</span>
+    </div>
+
+    <h3>✅ 특징</h3>
+
+    <ul>
+      <li>➡️ 옆으로 나란히 있어요</li>
+      <li>📏 필요한 크기만 사용해요</li>
+      <li>📝 글자 꾸밀 때 많이 써요</li>
+      <li>🚫 width, height 적용이 어려워요</li>
+    </ul>
+
+    <h3>📚 대표적인 인라인 태그 종류</h3>
+
+    <table>
+      <tr>
+        <th>태그</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td>&lt;span&gt;</td>
+        <td>글자 영역</td>
+      </tr>
+      <tr>
+        <td>&lt;a&gt;</td>
+        <td>링크</td>
+      </tr>
+      <tr>
+        <td>&lt;strong&gt;</td>
+        <td>강조</td>
+      </tr>
+      <tr>
+        <td>&lt;em&gt;</td>
+        <td>기울임 강조</td>
+      </tr>
+      <tr>
+        <td>&lt;img&gt;</td>
+        <td>이미지</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>🆚 블럭 vs 인라인 한눈에 보기</h2>
+
+    <table>
+      <tr>
+        <th>비교</th>
+        <th>블럭 레벨</th>
+        <th>인라인 레벨</th>
+      </tr>
+      <tr>
+        <td>줄바꿈</td>
+        <td>⭕ 자동 줄바꿈</td>
+        <td>❌ 줄바꿈 없음</td>
+      </tr>
+      <tr>
+        <td>크기</td>
+        <td>한 줄 전체 사용</td>
+        <td>필요한 만큼만 사용</td>
+      </tr>
+      <tr>
+        <td>느낌</td>
+        <td>📦 큰 상자</td>
+        <td>✏️ 글자</td>
+      </tr>
+      <tr>
+        <td>대표 태그</td>
+        <td>div, p, h1</td>
+        <td>span, a, strong</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>🎯 아주 중요한 한마디!</h2>
+
+    <div class="tip">
+      🧱 블럭 = "혼자 한 줄!"<br />
+      ✏️ 인라인 = "옆으로 붙기!"
+    </div>
+
+    <p class="emoji">
+      😄 이것만 기억해도 HTML 절반은 이해한 거예요!
+    </p>
+  </section>
+
+</body>
+</html>
+```

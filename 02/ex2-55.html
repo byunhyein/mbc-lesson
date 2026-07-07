@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>둥근 테두리</title>
+    <style>
+      .radius {
+        background-color: antiquewhite;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        line-height: 100px;
+        text-align: center;
+      }
+
+      /* 백그라운드 높이, 너비 지정하려면 인라인블럭 */
+      /* 글씨 재정렬 - 중앙으로 */
+
+      .radius1 {
+        border-radius: 100px;
+        /* 전체 네 모서리에 100px의 둥글기 적용 */
+      }
+      .radius2 {
+        border-radius: 10px 40px;
+        /* 좌측에서 시작, 시계방향으로 정렬 - 좌/상 10 | 우/상 40 | 우/하 10 | 좌/하 40 */
+      }
+      .radius3 {
+        border-radius: 100px 100px 0 0;
+        /* 역시 좌측에서 시작, 시계방향 정렬이므로 좌,우 상단에만 100px 적용 */
+      }
+      .radius4 {
+        border-radius: 100px 15px 50px;
+        /* 3개만 작성시, 작성하지 않은 모서리와 대각선으로 마주보는 모서리의 둥글기는 동일하게 적용됨
+        좌/상 100 | 우/상 15 | 우/하 50 | 좌/하 15 ... 그래서 우측 상단의 px값이 좌측 하단에 중복 적용!*/
+      }
+
+      .radius5{
+        width: 258px;
+        height: 100px;
+        background-color: #d9d9d9;
+        border: 1px solid #000;
+        border-radius: 17px / 50px;
+        /* 슬래시로 표기하면, 수평 / 수직으로 둥글기가 적용됨. */
+        /* border-radius: 20px 50px 100px 50px / 100px 50px 50px 20px; 이런 식으로도 해볼수 있다. */
+      }
+
+      /* .radius5 {
+        box-sizing: border-box;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: #d9d9d9;
+        border: 1px solid #000000;
+        border-radius: 20px;
+      } */
+    </style>
+  </head>
+  <body>
+    <span class="radius radius1">radius1</span>
+    <span class="radius radius2">radius2</span>
+    <span class="radius radius3">radius3</span>
+    <span class="radius radius4">radius4</span>
+    <span class="radius radius5">radius5</span>
+  </body>
+</html>

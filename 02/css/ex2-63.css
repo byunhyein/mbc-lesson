@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* @import url(reset.css); */
+
+.flex-container {
+  display: flex;
+  /* figma의 오토레이아웃과 상당히 유사한 기능! */
+  background-color: #eee;
+  flex-direction: row;
+  flex-direction: row-reverse;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}

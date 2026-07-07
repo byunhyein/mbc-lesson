@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.red {
+  /* position: relative; (normal flow) */
+  position: absolute; /* float 발생, float: */
+  top: 50%;
+  left: 50%;
+}
+
+.green {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+.child.blue {
+  /* float 절대좌표 : 브라우저 기준 */
+  position: fixed;
+  width: auto;
+  left: 0;
+  right: 0;
+  top: -120px;
+  /* 애니메이션을 줄 때에는 일단 숨겨놔야 함 */
+  transition: 0.5s;
+}
+
+.green:hover+.blue {
+  top: 0;
+}
+/* 우와 신기하다 */
+
+body {
+  height: 200vh;
+}
+
+/* 좌표 위치는 같은데, 다르게 나타나는 이유? */
+/* absolute : 절대적인; 절대 좌표. 기준점이 절대 변하지 않음. */
+/* relative : 상대적인; 자신의 위치에 따라 기준점이 변함. */

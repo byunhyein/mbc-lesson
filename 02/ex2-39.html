@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>opacity</title>
+    <style>
+      body {
+        background: url(./img/bg_grid.gif);
+      }
+
+      div {
+        background-color: yellow;
+        margin-bottom: 10px;
+      }
+
+      .light {
+        opacity: 0.2;
+        /* 선택자 전체의 불투명도를 조절한다. */
+      }
+
+      .medium {
+        background: rgba(255, 255, 0, 0.2);
+        /* 선택자의 배경 색상의 불투명도를 조절한다. */
+      }
+
+      .heavy {
+        filter: opacity(0.5);
+        /* .light에 적용한 opacity와 같은 기능! */
+      }
+
+      .heavy {
+        filter: opacity(0.2) blur(10px);
+        /* 단일 opacity와의 차이?
+          단일 opacity - 속성 | filter:opacity - 필터라는 속성의 오퍼시티라는 값
+          필터라는 속성 내에서 조절 가능한 다른 값들과 함께 사용해, 여러가지 값을 또 새로 만들 수 있다 */
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="light">겨우 보이는 글</div>
+    <div class="medium">좀 더 잘 보이는 글</div>
+    <div class="heavy">쉽게 보이는 글</div>
+  </body>
+</html>

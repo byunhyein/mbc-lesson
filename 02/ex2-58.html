@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box-sizing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: url(img/bg_grid.png);
+      }
+
+      p {
+        background-color: rgba(255, 255, 0, 0.6);
+        border: 10px solid rgba(0, 0, 0, 0.5);
+        width: 600px; /* 전체 너비는 양 옆에 10px 보더가 있으므로 620px! */
+        height: 100px; /* 전체 높이는 위아래에 10px 보더가 있으므로 120px! */
+        margin-bottom: 10px;
+      }
+
+      .sizing {
+        box-sizing: border-box;
+        /* 박스 크기의 계산 기준을 지정하기
+        : 전체 너비와 높이를 위처럼 추가하지 않고, 지정된 너비와 높이 (600px * 100px) 에 맞추어서 계산 */
+      }
+
+      .sizing_list {
+        width: 500px;
+        margin-top: 200px; /* 밑에 margin: auto 를 쓰니... 적용이 안 된다 */
+        margin: 20px auto; /* margin-top을 주면서 중앙정렬까지! */
+
+        padding: 50px; /* 패딩값 50을 좌우에 추가함으로써 너비는 총 600px이 됨 */
+        height: 200px; /* 패딩값 50을 상하에 추가함으로써 높이는 총 300px이 됨 */
+
+        box-sizing: content-box;
+        /* 너비, 높이가 border, padding 이 모두 더해진 값의 상자 크기를 유지. */
+        box-sizing: border-box;
+        /* 너비, 높이가 전부 기본값인 500px * 200px 로 변경. border 값 포함. */
+
+        list-style: none;
+      }
+
+      .sizing_list li {
+        background-color: rgba(219, 95, 95, 0.8);
+        text-align: center;
+        /* a태그 말고 부모태그인 li에 text-align을 써야 적용이 되는구나 */
+        display: inline-block;
+        width: 24%;
+        height: 100%;
+      }
+      .sizing_list li:nth-child(odd) {
+        background-color: rgba(219, 95, 95, 0.5);
+      }
+
+      .sizing_list li a {
+        text-decoration: none;
+        color: white;
+        line-height: 100px;
+        font-size: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p>It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="sizing">It's impossible not only starting good but also keeping it firm!!</p>
+    <ul class="sizing_list">
+      <!-- <li>간의 공백이 생기는 이유는...
+        모든 li 태그가 줄바꿈이 되어있기 때문이다! (엔터로) -->
+      <li><a href="#">Company</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Custommer</a></li>
+      <li><a href="#">Community</a></li>
+    </ul>
+  </body>
+</html>

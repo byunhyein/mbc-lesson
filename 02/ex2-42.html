@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경 이미지의 위치</title>
+    <style>
+      body {
+        background-image: linear-gradient(yellow, blue);
+        /* 선형 그라디언트 */
+
+        li {
+          list-style: none;
+        }
+
+        background-image: url(./img/bg_linepttn.png), url(img/bg_ar.png);
+
+        background-repeat: repeat-y, no-repeat;
+        /* 첫 번째 이미지에 대한 반복 속성, 두 번째 이미지에 대한 반복 속성 (쉼표로 구분) */
+        /* repeat-y : Y축 방향으로 반복됨 / no-repeat : 반복되지 않음 */
+
+        background-position:
+          0 100%,
+          18px 73%;
+      }
+
+      body:hover {
+        background-position:
+          0px 100%,
+          0px 73%;
+      }
+
+      /* 첫 번째 ul에게만 적용하고 싶을 때, nth-child가 아닌 nth-of-type!! */
+      /* 그래서 안됐구나... */
+      ul:nth-of-type(1) li {
+        padding-left: 20px;
+        background-image: url(img/bg_bullet.png);
+        background-repeat: no-repeat;
+        background-position: 4px 50%;
+      }
+
+      ul:nth-of-type(2) li {
+        height: 30px;
+        box-sizing: border-box;
+        background-image: url(img/bg_checkbox.png);
+        background-repeat: no-repeat;
+
+        background-position: 0px 0px;
+        
+        background-position: left top;
+        /* 웹사이트의 0, 0 좌표값은 좌측 최상단을 기준으로 한다. */
+        
+        background-position-x: left; /* 속성값 : left, right, center */
+        background-position-y: top; /* 속성값 : top, bottom, center */
+
+        padding-left: 40px;
+      }
+
+      ul:nth-of-type(2) li:hover {
+        background-position: 0px -30px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h3>최근 게시물</h3>
+    <ul>
+      <li>PC 사양 알아보기</li>
+      <li>미니타워와 미들타워의 차이</li>
+      <li>어깨의 통증과 발목의 통증</li>
+    </ul>
+    <ul>
+      <li>PC 사양 알아보기</li>
+      <li>미니타워와 미들타워의 차이</li>
+      <li>어깨의 통증과 발목의 통증</li>
+    </ul>
+  </body>
+</html>

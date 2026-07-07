@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import url(reset.css);
+
+body {
+  height: 200vh;
+}
+
+.container {
+  width: 500px;
+  height: 150vh;
+  background-color: #eee;
+  padding: 50px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  margin-bottom: 120px;
+  /* 상단 마진 겹침 현상 : 형제 요소 뿐 아니라 인접해 있는 부모 요소에게도 영향을 미침
+    큰 쪽의 마진을 따라가기 때문에
+    자식 요소에게 120px의 마진이 부모요소에게도 그대로 적용됨. */
+}
+.sticky {
+  position: sticky;
+  /* 우와 안올라간당 */
+  /* 언제 올라가냐? : 부모 요소가 사라질 때 같이 사라지는데... 그게 어떻게 하는 거였지...?
+  하.., 현재시간 1시 1분... */
+  top: 300px;
+  background-color: aquamarine;
+}

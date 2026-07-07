@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>버튼을 화면 중앙에 배치하기</title>
+    <style>
+      /* 버튼을 화면 중앙에 배치하기 */
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: url("https://placedog.net/400/334?id=224") no-repeat left top fixed;
+        background-size: cover;
+        display: flex;
+
+        justify-content: center;
+        /* 수평에서 중앙에 */
+
+        align-items: center;
+        /* 수직에서 중앙에 */
+
+        height: 100vh;
+        /* 수직 중앙을 하려면 위치 지정이 필요한가 봐요 */
+      }
+      button {
+        background-color: #ccc;
+        font-size: 1.2em;
+        padding: 1em 2em;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <button>클릭!</button>
+  </body>
+</html>

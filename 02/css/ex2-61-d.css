@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.green {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.parent {
+  position: relative;
+  position: absolute;
+  position: fixed;
+}

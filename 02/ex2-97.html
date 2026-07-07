@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform-2d</title>
+    <style>
+      .box,
+      .box1,
+      .box2 {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        margin: 50px;
+        transition-property: transform;
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+      }
+
+      .box2 {
+        transform: skewX(15deg); /* 기울기 */
+        /* skew + X나 Y 한 방향만 쓸 때 대문자로 표기하면 됨! = ex. skewX, skewY */
+        
+        transform: skewX(15deg) skewY(35deg) skew(15deg, 35deg);
+      }
+
+      .box:hover {
+        transform: translate(50px); /* 50px 만큼 이동 */
+        transform: rotate(180deg); /* 180도 회전 */
+
+        /* 이동과 회전을 동시에 하면서, 크기까지 키우려면? */
+        transform: scale(1.5) translate(50px, 50px) rotate(360deg); /* 옆에 그냥 같이 쓰면 됨 */
+      }
+
+      .box1 {
+        overflow: hidden;
+        /* overflow는 자식이 넘치는 걸 부모가 잘라내는 속성! 이므로 부모 요소에 써야 한다. */
+        position: relative;
+      }
+
+      .box1:after {
+        position: absolute;
+        left: 50px; /* 좌표값으로 다루기 */
+        top: calc(100% - 5px);
+        /* 총 높이 100% (100px) 에서, 선 높이만큼인 5px을 빼라 */
+        /* calc(nn - nn) 할 때에는 띄어쓰기를 해야 한다 */
+
+        content: ""; /* 글자의 옆으로 오기 때문에 기본적으로 인라인 요소구나 */
+        /* display: block; */
+        width: 0%;
+        height: 5px;
+        background-color: red;
+        transform: translate(-50%, 0);
+        transition: width 0.5s;
+      }
+
+      .box1:hover::after {
+        width: 100%; /* width 100%일 때 hover하면 after 요소가 나온다 */
+      }
+
+      /* 중앙에서 펼쳐지는 선은 이렇게 하는 거였구나... 내 두뇌로는 도저히 먼저 생각할 수 있는 방법이 아니엇다 */
+
+      .box1::before {
+        position: absolute; /* position이 앱솔루트가 되면 margin auto 이런게 계산이 안 됨 (절대값이라서) */
+        content: "";
+        width: 100%;
+        height: 100%;
+
+        /* 글래스모피즘 효과 */
+        border-radius: 50%;
+        background: rgba(185, 247, 255, 0.449);
+        backdrop-filter: blur(1.5px);
+
+        /* 수직 중앙 정렬 */
+        /* 기준은 좌측 상단, web에서의 시작점을 기준, 부모 기준에서 50% 이동 */
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        /* translate : 첫번째 값은 x, 두번째 값은 y / 음수 : 왼쪽으로 이동 */
+        /* scale : 시작값을 확실히 정하기 */
+        z-index: 1;
+        transition: all 0.5s;
+      }
+
+      .box1:hover:before {
+        transform: translate(-50%, -50%) scale(1.5);
+        /* scale : 마치는 값도 확실히!! */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">2D Transform</div>
+    <div class="box1">2D Transform</div>
+    <div class="box2">2D Transform</div>
+  </body>
+</html>

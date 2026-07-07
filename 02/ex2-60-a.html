@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float 텍스트 흐름</title>
+    <style>
+      img {
+        width: 150px;
+
+        float: right;
+        /* float은 부유해서 방향을 옮긴다 */
+
+        margin-left: 50px;
+        /* html 문서의 특징 : 빈 자리가 없다. 다음의 올 요소들이 빈 공간을 채운다가 원칙. */
+        /* 현재 페이지상 margin-left로 50px이 비어있으므로, 50px의 다음부터 바로 공간을 채우고 있음 */
+      }
+
+      /* .container {
+        height: 300px;
+      } */
+      /* 단점 1: 이 방법을 사용하면, 반응형 페이지 제작 시에 일일이 다 수정해야 한다. */
+      /* 단점 2: 또한 텍스트의 길이가 300px 이상이 되면, 자동으로 늘어나지 않고 300px끼리 겹칠 수 있다. */
+
+      .clear::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .container:nth-of-type(2) img{
+        /* .clear은 이미 명령이 들어가 있으므로 css 충돌이 날 수 있다. class마다의 쓰임새를 잘 알고 이용하기 */
+        float: left;
+        margin-left: 0;
+        margin-right: 50px;
+        /* margin: 0, 50px, 0, 0; (위쪽부터 시계방향 순서.) */
+      }
+
+      /* 요소를 열배치하기 */
+      /* 1. display : inline-block
+      - 장점 : 대상 요소에 직접 선언
+      - 단점 : 공백문자 생김 => 서버 배포 전 공백 모두 삭제 (코드 최적화, HTML 코드 용량 압축, Prettier 무시) */
+
+      /* 2. float : left, right
+      - 장점 : 대상 요소에 직접 선언
+      - 단점 : 부모, 형제의 크기를 인식 못함 => float의 부모 요소 (상위 요소) 에게 항상 clearfix를 해줘야 함. */
+      /* geminicli에게 "clearfix 해줘" 라고 명령해주기... */
+    </style>
+  </head>
+  <body>
+    <div class="container clear">
+      <img src="img/lotus.png" alt="연꽃" />
+      <p>인도가 원산지인 연꽃은 연못 위에 둥둥 떠 있는 수생식물이라는 이미지만 떠올리기 쉽지만, 실은 논이나 늪지의 진흙 속에서도 자라고 관상용뿐만 아니라 식용, 약용으로 쓰이기도 합니다.</p>
+    </div>
+
+    <div class="container">
+      <img src="img/lotus.png" alt="연꽃" />
+      <p>인도가 원산지인 연꽃은 연못 위에 둥둥 떠 있는 수생식물이라는 이미지만 떠올리기 쉽지만, 실은 논이나 늪지의 진흙 속에서도 자라고 관상용뿐만 아니라 식용, 약용으로 쓰이기도 합니다.</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>grid 영역 배치 : 영역 이름으로 페이지 구조 배치</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      header,
+      nav,
+      main,
+      footer {
+        padding: 20px;
+      }
+      header {
+        background: #f99;
+      }
+      nav {
+        background: #9f9;
+      }
+      main {
+        background: #99f;
+      }
+      footer {
+        background: #ff9;
+      }
+
+      .grid-layout {
+        display: grid;
+        min-height: 300px;
+        /* 최소, 적어도 300px 이상의 값을 가질 수 있다~ 다만 299px은 될 수 없음. */
+
+        grid-template-columns: 1fr 1fr 1fr;
+        /* 3분의 1 씩 열이 만들어진다. */
+
+        grid-template-rows: auto 1fr auto;
+        /* 최소 높이가 300px이 위에서 적용되어 있으므로... */
+
+        gap: 10px;
+        grid-template-areas:
+          "header header header"
+          "nav main main"
+          "footer footer footer";
+      }
+
+      header {
+        grid-area: header;
+      }
+      nav {
+        grid-area: nav;
+      }
+      main {
+        grid-area: main;
+      }
+      footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid-layout">
+      <header>Header</header>
+      <nav>Nav</nav>
+      <main>Main</main>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

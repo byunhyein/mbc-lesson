@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num1 = prompt("50 미만의 수 입력");
+      let num2 = prompt("50 미만의 수 입력");
+
+      if (num1 == null || num2 == null) {
+        alert("입력을 취소하셨습니다.");
+      } else if (num1 == "" || num2 == "") {
+        alert("숫자를 입력하세요.");
+      }
+
+      if (Number(num1) < 50 || Number(num2) < 50) {
+        /* 둘중에 하나라도 참이면 true야! */
+        alert("두 개의 숫자 중 최소 한 개는 50보다 작네요.");
+      } else {
+        /* 조건이 false가 나오면 */
+        alert("두 개의 숫자 모두 50보다 커요.");
+      }
+    </script>
+  </body>
+</html>

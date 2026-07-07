@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import url("./reset.css");
+
+html {
+  overflow-y: scroll;
+  /* overflow-y : scroll; | 화면 우측에 상하 scroll 을 생성한다. */
+  /* scroll 값은 항상 기본적으로 설정하는 값 */
+
+  overflow-y: hidden;
+  /* overflow-y : hidden; | scroll을 감춘다. 위의 생성된 scroll 도 감춰진다. */
+}
+
+h3 {
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.agree {
+  font-size: 1.2em;
+  width: 500px;
+  height: 80px;
+  border: 1px solid;
+  /* p 요소에 너비와 높이만 준다고 문자가 가려지지 않는다. */
+  /* 글씨를 너비와 높이에 맞게 감추는 법 [Overflow!] */
+
+  white-space: nowrap;
+  /* 안의 텍스트 내용이 width=500 보다 크고, 자동 줄바꿈 할 수 없는 white-space: nowrap;의 경우에는
+  overflow에서 가로-세로 스크롤을 만든다. */
+
+  /* overflow: auto; */
+  /* 자동 줄바꿈이 width=500에 맞추어 되고 있으므로, overflow: auto; 시 상하 스크롤이 생성. */
+
+  overflow-y: scroll;
+  /* y축 (상하) scroll 바 생성 */
+
+  overflow-x: hidden;
+  /* x축의 넘치는 콘텐츠 숨기기 */
+
+  overflow-x: visible;
+  /* x축 (좌우) 컨텐츠 전부 보이게 표시 */
+
+
+  /* visible : 컨텐츠가 다 보임 */
+  /* hidden : 컨텐츠가 잘림 */
+  /* scroll : 컨텐츠가 잘리고, 스크롤이 생성됨 */
+
+}

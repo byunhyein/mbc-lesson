@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+  background: url(../imgs/bg_grid.png);
+  font: 16px "Malgun Gothic";
+}
+
+p {
+  background: rgba(200, 200, 0, 0.5);
+  width: 600px;
+  height: 100px;
+  padding: 100px;
+  padding: 100px 10px;
+
+  padding: 100px 60px 20px 10px;
+  /* 단축 속성 작성법 : 패딩의 적용은 12시 방향에서부터 시계방향으로 진행 "상-우-하-좌" */
+
+  padding-top: 100px;
+  padding-right: 60px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  /* 단축 속성 작성이 어렵다면, 이런 식으로 풀어서 쓸 수도 있다. */
+}

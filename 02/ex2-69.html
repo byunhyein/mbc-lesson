@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>align-self</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .container {
+        width: 450px;
+        height: 150px;
+        background-color: #eee;
+        border: 1px solid #222;
+        margin-bottom: 20px;
+        display: flex; /* 플렉스 컨테이너 지정 */
+        align-items: center; /* 교차축의 중앙에 배치 */
+      }
+      .box {
+        padding: 5px 45px;
+        margin: 5px;
+        width: 80px;
+      }
+      .box:nth-child(odd) {
+        background-color: rgb(255, 187, 0);
+      }
+      .box:nth-child(even) {
+        background-color: rgb(35, 220, 35);
+      }
+      p {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      /* 1번 상자는 교차축 시작점에, 3번 상자는 교차축에 가득 차게 배치하는 #box1, #box3 스타일 만들기 */
+      /* 지금까지는 부모한테 선언하면 자식에게 배치되는 것을 봤지만, 이번 align-self 는 자식에게 직접 선언하는 명령! */
+
+      #box1 {
+        align-self: flex-start;
+        /* 교차축의 시작점에 배치*/
+      }
+      #box3 {
+        align-self: flex-end;
+        /* 교차축의 끝점에 배치*/
+
+        align-self: stretch;
+        /* 교차축에 가득 차게 쭉 늘리기 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="box1"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box" id="box3"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --move: calc(100% - 200px);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: green;
+        background-color: #499b46;
+        opacity: 0.8;
+        background-image: radial-gradient(circle, #b8ff76 1.2px, transparent 1.2px);
+        background-size: 15px 15px;
+      }
+
+      .ball {
+        z-index: 5;
+        width: 200px;
+        animation: cup 5s infinite alternate;
+        position: absolute;
+      }
+
+      .goal {
+        width: 300px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      @keyframes cup {
+        0% {
+          left: 0;
+          top: 0;
+          transform: rotate(0deg);
+        }
+        50% {
+          left: var(--move);
+          top: 0;
+        }
+        100% {
+          left: var(--move);
+          top: var(--move);
+          transform: rotate(720deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="imgs/soccerball.png" alt="" class="ball" />
+    <img src="imgs/goalpost.png" alt="" class="goal" />
+  </body>
+</html>

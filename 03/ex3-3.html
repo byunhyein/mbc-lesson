@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button>click</button>
+    <script>
+      document.querySelector("button").onclick = function () {
+        window.alert("hi");
+      };
+    </script>
+
+    <hr />
+
+    <button class="confirm">confirm</button>
+    <script>
+      document.querySelector(".confirm").onclick = function () {
+        confirm("정말 삭제하시겠습니까?"); // 확인 or 취소값을 받아서 다음 동작을 할 수 있다. confirm이라서 와우.
+      };
+    </script>
+
+    <hr />
+
+    <button class="prompt">prompt</button>
+    <script>
+      document.querySelector(".prompt").onclick = function () {
+        let a = prompt("채팅을 입력하세용."); // 입력할 수 있는 내용을 받을 수 있다. 이후 입력한 내용을 전달하여 추후의 작업을 하려면 변수가 필요하긴 하다.
+
+        // 변수 작업
+        console.log(a);
+        document.write(a);
+        // 입력한 메시지로 이동된다. 어케했노...
+      };
+    </script>
+
+    <hr />
+
+    <button class="write">write</button>
+    <script>
+      document.querySelector(".write").onclick = function () {
+        let a = document.write("<h1>은솔이</h1><h2>일어나</h2>");
+        // console.log(a);    콘솔은 document.write에선 인식과 출력이 안돼
+        // document.write(a); 그러니깡 여기서는 사용 못해
+      };
+    </script>
+
+    <hr />
+
+    <button class="log">log</button>
+    <script>
+      document.querySelector(".log").onclick = function () {
+        let a;
+        a = console.log("출력해봐요");
+      };
+
+      // 속성, property (이렇게스는거맞나)
+      // (...).style.color / (...).style.background : 다른 식별자와 함께 쓰고, 뒤에 소괄호가 없음. = 변수 (단독 사용), 속성 (프로퍼티)
+
+      // 메소드, method
+      // console.log(...) / document.write(...) : 다른 식별자와 함께 쓰고, 소괄호가 있음. = 함수, 메소드
+      // '.' 을 찍으면 큰 명령어에서 > 작은 명령어로 이동하는 것.
+
+      // 함수란? 큰 개념 | 주인이 없으면 함수, 주인이 있으면 메소드 | 함수 > 메소드
+      // document = html에서의 body와 같음
+    
+
+
+    </script>
+  </body>
+</html>

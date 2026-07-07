@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>flex-basis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .container {
+        width: 300px;
+        display: flex;
+        border: 1px solid #222;
+        background-color: #eee;
+        gap: 30px;
+      }
+
+      /* flex-basis 속성을 사용해 플렉스 항목의 기본 크기 지정하기 */
+
+      .box {
+        background-color: #222;
+        flex-basis: 150px;
+        /* 플렉스 항목의 최솟값 지정 */
+        
+        flex-grow: 1;
+        /* 남았던 공간 (여백 공간) 을 아이템 박스들이 1:1 비율로 분배해서 가져감 */
+        /* 쉽게 말해서, 남는 것 채우기 */
+        /* basis에 줬던 크기보다 공간이 커질 것이고, 비율로 줬기 때문에 아이템 박스가 가변적으로 사이즈 변경됨 */
+
+        flex-shrink: 1;
+        /* 부족할 때 줄이기 */
+      }
+
+      p {
+        color: #fff;
+        text-align: center;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box"><p>가나다라마</p></div>
+      <div class="box"><p>가나다라마바사</p></div>
+      <div class="box"><p>ABCDE</p></div>
+    </div>
+  </body>
+</html>

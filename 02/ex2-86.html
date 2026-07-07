@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Grid Layout: grid 이미지 갤러리</title>
+    <style>
+      .gallery {
+        width: 700px;
+        margin: 20px auto;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 180px);
+        grid-template-areas:
+          "photo1 photo1 photo2"
+          "photo1 photo1 photo3"
+          "photo4 photo5 photo6";
+        gap: 20px;
+      }
+      /* 아 귀여워 */
+      /* 이거 index.html에 꼭 적용하고싶어서 복습해야함 ^^ */
+
+      .photo1 {
+        grid-area: photo1;
+      }
+      .photo2 {
+        grid-area: photo2;
+      }
+      .photo3 {
+        grid-area: photo3;
+      }
+      .photo4 {
+        grid-area: photo4;
+      }
+      .photo5 {
+        grid-area: photo5;
+      }
+      .photo6 {
+        grid-area: photo6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <img class="photo1" src="https://placedog.net/640/480?id=1" alt="귀여워 완전 꼼가같다 이거는" />
+      <img class="photo2" src="https://placedog.net/640/480?id=2" alt="아귀여워 행복한 아기강아지형제" />
+      <img class="photo3" src="https://placedog.net/640/480?id=14" alt="눈이 너무이쁜 오드아이코기 미텼다 이건...그다" />
+      <img class="photo4" src="https://placedog.net/640/480?id=12" alt="진짜 개귀여운 티컵강아지버전 닥훈이같음" />
+      <img class="photo5" src="https://placedog.net/640/480?id=38" alt="너무귀엽고 너무예쁜 아기 브로콜리" />
+      <img class="photo6" src="https://placedog.net/640/480?id=16" alt="이렇게 해맑게웃을일이냐 너무기여워 하" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+ # 운영 체제 파일
+.DS_Store
+Thumbs.db
+
+# 에디터/IDE 파일
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 임시 파일
+*.log
+*.tmp
+*.temp
+*.psd
+*.ai
+*/bat
+
+# 로컬 환경 파일
+.env
+.env.*
+
+# 빌드/출력 산출물
+/dist/
+/build/
+
+# 노드 / 패키지 관리자 (나중에 사용될 경우)
+node_modules/
+package-lock.json

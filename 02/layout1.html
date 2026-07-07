@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" />
+    <style>
+      .item {
+        width: 100px;
+        height: 100px;
+      }
+      .cont {
+        display: grid;
+        grid-template-areas:
+          "box1 box2"
+          "box3 box4";
+      }
+
+      .item:nth-child(1) {
+        grid-area: box1;
+        background-color: #acffa4;
+      }
+      .item:nth-child(2) {
+        grid-area: box2;
+        background-color: #ff8484;
+      }
+      .item:nth-child(3) {
+        grid-area: box3;
+        background-color: #ffd2d9;
+      }
+      .item:nth-child(4) {
+        grid-area: box4;
+        background-color: #b2daff;
+      }
+      .item {
+        width: 50%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="item">box1</div>
+      <div class="item">box2</div>
+      <div class="item">box3</div>
+      <div class="item">box4</div>
+    </div>
+  </body>
+</html>

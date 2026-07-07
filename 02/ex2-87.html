@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>미디어 쿼리 기본 문법</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* 화면 너비가 769px 이상일 때 적용 */
+      .box {
+        width: 600px;
+        height: 150px;
+        background-color: #3689ff;
+        text-align: center; /* text-align 선언 지점은 자식이 아닌 부모 요소에게 */
+      }
+
+      span {
+        display: inline-block;
+        font-size: 32px;
+        color: white;
+        padding: 20px;
+      }
+
+      /* 화면 너비가 최소 0 ~ 최대 768px 일때 적용 */
+      @media screen and (max-width: 768px) {
+        .box {
+          width: 100%;
+          background-color: red;
+        }
+        span:nth-of-type(2) {
+          display: none;
+          /* 글씨가 안 보이고, 이모지만 보이게 */
+        }
+      }
+      /* 화면의 너비가 768 px 이상일 때, 위 너비로 바뀌어라 */
+      
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span>🚗</span>
+      <span>button</span>
+    </div>
+  </body>
+</html>

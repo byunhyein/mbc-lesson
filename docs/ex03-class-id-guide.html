@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏷️ CSS 클래스 vs 아이디 - 초등학생 가이드</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Jua', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px #d0e1f9;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 25px;
+            position: relative;
+            border: 4px solid transparent;
+        }
+
+        .id-section {
+            background: #fff5f5;
+            border-color: #ffcdd2;
+        }
+
+        .class-section {
+            background: #f1f8ff;
+            border-color: #c0d9f9;
+        }
+
+        h2 {
+            font-family: 'Jua', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .id-section h2 { color: #d32f2f; }
+        .class-section h2 { color: #1976d2; }
+
+        .analogy-box {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .emoji-big {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .rule-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rule-list li {
+            padding: 12px 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .id-section .rule-list li { border-left: 6px solid #ef5350; }
+        .class-section .rule-list li { border-left: 6px solid #42a5f5; }
+
+        .code-preview {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 15px;
+            font-family: 'Consolas', monospace;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            overflow-x: auto;
+        }
+
+        .tag { color: #ff79c6; }
+        .attr { color: #50fa7b; }
+        .val { color: #f1fa8c; }
+        .sel { color: #8be9fd; }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .compare-table th {
+            background: #4a90e2;
+            color: white;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        .compare-table td {
+            padding: 15px;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .highlight {
+            background: #fff176;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .tip-box {
+            background: #e8f5e9;
+            border: 2px solid #a5d6a7;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .tip-box strong { color: #2e7d32; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏷️ CSS 클래스 vs 아이디</h1>
+        <p class="subtitle">이름표와 교복! 누구인지 알려주는 마법의 꼬리표</p>
+
+        <!-- 아이디 섹션 -->
+        <div class="section id-section">
+            <h2>🆔 아이디 (ID Selector)</h2>
+            <div class="analogy-box">
+                <span class="emoji-big">🪪</span>
+                <p>아이디는 <strong>'주민등록번호'</strong>나 <strong>'이름표'</strong>와 같아요!<br>
+                세상에 딱 한 명만 가질 수 있는 특별한 이름이에요.</p>
+            </div>
+
+            <ul class="rule-list">
+                <li><span>☝️</span> <strong>딱 한 번만!</strong> 한 페이지에 같은 아이디는 하나만 써야 해요.</li>
+                <li><span>#️⃣</span> CSS에서는 이름 앞에 <strong>샵(#)</strong>을 붙여서 불러요.</li>
+                <li><span>🎯</span> 특정 요소 딱 하나만 콕 집어서 꾸밀 때 사용해요.</li>
+            </ul>
+
+            <div class="code-preview">
+<span class="comment">/* CSS에서 부를 때 */</span>
+<span class="sel">#my-name</span> { <span class="attr">color</span>: <span class="val">blue</span>; }
+
+<span class="comment"><!-- HTML에서 쓸 때 --></span>
+&lt;<span class="tag">p</span> <span class="attr">id</span>=<span class="val">"my-name"</span>&gt;나는 특별해!&lt;/<span class="tag">p</span>&gt;
+            </div>
+        </div>
+
+        <!-- 클래스 섹션 -->
+        <div class="section class-section">
+            <h2>👕 클래스 (Class Selector)</h2>
+            <div class="analogy-box">
+                <span class="emoji-big">👕</span>
+                <p>클래스는 <strong>'교복'</strong>이나 <strong>'팀 복'</strong>과 같아요!<br>
+                여러 명의 친구가 똑같은 옷을 입을 수 있는 이름이에요.</p>
+            </div>
+
+            <ul class="rule-list">
+                <li><span>🙌</span> <strong>여러 번!</strong> 똑같은 클래스 이름을 여러 태그에 줄 수 있어요.</li>
+                <li><span>.️⃣</span> CSS에서는 이름 앞에 <strong>점(.)</strong>을 붙여서 불러요.</li>
+                <li><span>🎨</span> 비슷한 친구들을 한꺼번에 똑같이 꾸밀 때 사용해요.</li>
+            </ul>
+
+            <div class="code-preview">
+<span class="comment">/* CSS에서 부를 때 */</span>
+<span class="sel">.red-team</span> { <span class="attr">color</span>: <span class="val">red</span>; }
+
+<span class="comment"><!-- HTML에서 쓸 때 --></span>
+&lt;<span class="tag">p</span> <span class="attr">class</span>=<span class="val">"red-team"</span>&gt;1번 선수&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span> <span class="attr">class</span>=<span class="val">"red-team"</span>&gt;2번 선수&lt;/<span class="tag">p</span>&gt;
+            </div>
+        </div>
+
+        <!-- 비교 테이블 -->
+        <div class="section" style="background: #fffde7; border-color: #fff59d;">
+            <h2 style="color: #fbc02d;">🆚 한눈에 비교해볼까?</h2>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>🆔 아이디 (ID)</th>
+                        <th>👕 클래스 (Class)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>기호</strong></td>
+                        <td><span class="highlight">#</span> (샵)</td>
+                        <td><span class="highlight">.</span> (점)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>사용 횟수</strong></td>
+                        <td>딱 한 번만! (유일함)</td>
+                        <td>여러 번 가능! (재사용)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>비유</strong></td>
+                        <td>이름표, 주민등록번호</td>
+                        <td>교복, 팀 유니폼</td>
+                    </tr>
+                    <tr>
+                        <td><strong>언제 써요?</strong></td>
+                        <td>특별한 딱 하나를 꾸밀 때</td>
+                        <td>여러 개를 한꺼번에 꾸밀 때</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 꿀팁 -->
+        <div class="tip-box">
+            <strong>💡 선생님의 팁!</strong><br>
+            한 친구가 여러 개의 교복을 입을 수도 있어요! <br>
+            <code>class="blue-team thick-text"</code> 처럼 클래스는 공백을 두고 <strong>여러 개</strong>를 쓸 수 있지만, <br>
+            아이디는 무조건 <strong>하나</strong>만 가져야 한다는 걸 꼭 기억해!
+        </div>
+
+        <div class="footer">
+            <p>🌟 클래스와 아이디만 잘 써도 CSS 박사가 될 수 있어요!</p>
+            <p style="margin-top: 8px;">Made for future developers 🚀</p>
+        </div>
+    </div>
+</body>
+</html>

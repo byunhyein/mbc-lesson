@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미니홈피</title>
+  <!-- MADE BY CHATGPT -->
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #a7d8ff;
+      font-family: "Malgun Gothic", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .home {
+      width: 1000px;
+      height: 650px;
+      background: #e3f4ff;
+      border-radius: 20px;
+      padding: 20px;
+      border: 3px solid #6ab8ff;
+    }
+
+    .frame {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    /* 프로필 */
+
+    .profile {
+      width: 250px;
+      border: 2px solid #d9d9d9;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .today {
+      color: #ff6b6b;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 200px;
+      background: #eee;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .intro {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .music {
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    /* 메인 */
+
+    .main {
+      flex: 1;
+    }
+
+    .header {
+      margin-bottom: 20px;
+      border-bottom: 2px dashed #ccc;
+      padding-bottom: 10px;
+    }
+
+    .title {
+      font-size: 28px;
+      color: #4a90e2;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-top: 5px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      background: #4a90e2;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .menu a:hover {
+      background: #3478c9;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .box {
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .box h3 {
+      color: #4a90e2;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .guestbook {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="home">
+
+    <div class="frame">
+
+      <!-- 왼쪽 프로필 -->
+
+      <aside class="profile">
+
+        <div class="today">
+          TODAY 24 | TOTAL 12,345
+        </div>
+
+        <div class="profile-image">
+          프로필 사진
+        </div>
+
+        <div class="intro">
+          안녕하세요 :)<br>
+          오늘도 좋은 하루 보내세요.<br>
+          싸이월드 감성 테스트 중...
+        </div>
+
+        <div class="music">
+          🎵 BGM<br>
+          YB - 나는 나비
+        </div>
+
+      </aside>
+
+      <!-- 오른쪽 메인 -->
+
+      <main class="main">
+
+        <div class="header">
+          <div class="title">혜인의 미니홈피</div>
+          <div class="subtitle">
+            "행복은 가까운 곳에 있다."
+          </div>
+        </div>
+
+        <nav class="menu">
+          <a href="#">홈</a>
+          <a href="#">다이어리</a>
+          <a href="#">사진첩</a>
+          <a href="#">방명록</a>
+        </nav>
+
+        <section class="content">
+
+          <div class="box">
+            <h3>📢 최근 게시물</h3>
+
+            <ul>
+              <li>오늘의 일상 기록</li>
+              <li>HTML 공부 시작!</li>
+              <li>카페 다녀온 후기</li>
+              <li>새로운 취미 찾기</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h3>📷 사진첩</h3>
+
+            <p>
+              여행 사진이 업로드되었습니다.<br>
+              추억을 저장하는 공간입니다.
+            </p>
+          </div>
+
+        </section>
+
+        <section class="box guestbook">
+          <h3>💌 방명록</h3>
+
+          <p>
+            친구A : 놀러왔어~<br><br>
+
+            친구B : 홈페이지 너무 예쁘다!<br><br>
+
+            친구C : 오늘도 좋은 하루 😊
+          </p>
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

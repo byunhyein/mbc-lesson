@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>webfont and icons</title>
+
+    <!-- 1. link rel 방식 - 구글 폰트 "Gasoek One" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap" rel="stylesheet" />
+
+    <!-- 아이콘 - Snow -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=snowflake" />
+
+    <style>
+        /* 2. embed code 방식 - 눈누 "문막초해반" */
+      @font-face {
+        font-family: "MunmakchoHaeban";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2604-1@1.0/MUNMAK_HAEBANCHE.woff2") format("woff2");
+        font-weight: normal;
+        font-display: swap;
+      }
+    </style>
+    <style>
+      .t1 {
+        font-family: "Gasoek One", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 36px;
+      }
+      .t2 {
+        font-family: "MunmakchoHaeban";
+        font-weight: 900;
+        font-style: normal;
+        font-size: 30px;
+      }
+      .snow {font-size: 1em; color: rgb(148, 223, 223);}
+      .snow:hover {color: rgb(177, 177, 255);}
+    
+    </style>
+  </head>
+  <body>
+    <div class="t1"><span class="material-symbols-outlined snow"> snowflake </span> 오늘의 날씨를 말씀드리겠습니다.</div>
+    <div class="t2"><span class="material-symbols-outlined snow"> snowflake </span> 오늘의 날씨를 말씀드리겠습니다.</div>
+  </body>
+</html>

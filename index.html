@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍵 변혜인의 홈페이지</title>
+
+    <!-- [260528] 파비콘 삽입하기 -->
+    <link rel="icon" href="favicon/favicon-3.svg" type="image/svg+xml" />
+
+    <!-- [260528] 아이콘 삽입 링크 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shaved_ice" />
+
+    <!-- style 00 : 전체 정렬 -->
+    <style>
+      body {
+        text-align: center;
+      }
+      li {
+        margin: auto;
+      }
+      table {
+        margin: auto;
+      }
+      hr {
+        border: 1px dashed gainsboro;
+      }
+    </style>
+
+    <!-- style 01 : [260528] 웹폰트, 아이콘 삽입 -->
+    <style>
+      /* [260528] 웹폰트, 아이콘 삽입 */
+
+      /* 1. 헤더 타이틀 폰트 (학교안심 우산) */
+      @font-face {
+        font-family: "SchoolSafeUmbrella";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimUsanR.woff2") format("woff2");
+        font-weight: 400;
+      }
+
+      /* 2. 픽셀 폰트 */
+      @font-face {
+        font-family: "RoundedFixedsys";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff") format("woff");
+        font-weight: normal;
+      }
+
+      /* 폰트 적용하기 */
+      h1 {
+        font-family: "SchoolSafeUmbrella";
+        font-weight: 400;
+
+        font-size: 3em;
+        color: rgba(66, 170, 66, 0.726); /* 컬러에 불투명도 적용해버렸더니 이모지가 번쩍거려요; */
+      }
+      h1:hover {
+        color: greenyellow;
+      }
+
+      nav,
+      main,
+      article {
+        font-family: "RoundedFixedsys";
+        font-weight: 300;
+      }
+
+      /* 아이콘 적용하기 */
+      .cup1,
+      .cup2,
+      .cup3 {
+        font-size: 2em;
+        color: paleturquoise;
+      }
+      .cup1:hover {
+        background-color: lemonchiffon;
+        color: chocolate;
+        font-size: 40px;
+      }
+      .cup2:hover {
+        background-color: lightcoral;
+        color: cornsilk;
+        font-size: 40px;
+      }
+      .cup3:hover {
+        background-color: lavenderblush;
+        color: plum;
+        font-size: 40px;
+      }
+    </style>
+
+    <!-- style 02 : 글씨 스타일 적용하기 -->
+    <style>
+      /* 헤더 */
+      .hello {
+        color: rgb(158, 184, 107);
+      }
+      .hello:hover {
+        color: aquamarine;
+        font-size: 20px;
+      }
+      .hello:hover::after {
+        content: " 🤍";
+      }
+
+      /* 제목 색상 적용 */
+      h2,
+      h3 {
+        color: rgb(62, 75, 28);
+        font-weight: 500;
+      }
+
+      /* a태그 */
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        text-decoration: underline dashed rgb(255, 162, 178);
+      }
+      a:active {
+        color: cornflowerblue;
+      }
+
+      /* li */
+      li {
+        background-color: lavenderblush;
+        width: 300px;
+        margin-bottom: 10px;
+        font-size: 1em;
+        list-style-type: none;
+      }
+
+      /* 푸터 */
+      footer {
+        color: rgb(159, 167, 179);
+      }
+    </style>
+
+    <!-- style 03 : table 스타일 적용하기 -->
+    <style>
+      /* table, th, td, tr 스타일 적용하기 */
+      table {
+        width: 300px;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+      }
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid wheat;
+      }
+    </style>
+
+    <!-- style 04 : 타이틀에 그림자 적용하기 -->
+    <style>
+      h1 {
+        text-shadow: 2px 2px 1px #ecd5d5;
+      }
+    </style>
+
+    <!-- style 05 : 0601 figma 스타일 적용 -->
+    <style>
+      li {
+        margin-bottom: 20px;
+      }
+      .figma1 {
+        font-size: 20px;
+        background-color: lemonchiffon;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <!-- 1. 헤더 -->
+      <h1>🍵 변혜인의 홈페이지</h1>
+
+      <!-- 아이콘! -->
+      <div><span class="material-symbols-outlined cup1"> shaved_ice </span> * <span class="material-symbols-outlined cup2"> shaved_ice </span> * <span class="material-symbols-outlined cup3"> shaved_ice </span></div>
+
+      <p class="hello"><b>안녕하세요! :)</b></p>
+    </header>
+
+    <br />
+    <hr />
+    <br />
+
+    <nav>
+      <!-- 2. 내비 -->
+      <h2>🥁 내비게이션</h2>
+      <ul>
+        <li class="figma1">
+          <a href="figma/cafe.html"
+            ><img src="figma/img/cookieglaze.png" alt="확인쿠키" width="80" />
+            <br />
+            <b>🎇NEW! 0601 피그마🎇<br />CAFEIN HTML/CSS 제작</b>
+          </a>
+        </li>
+        <li>
+          <a href="practice/0513/qr.html"><b>① QR코드 클릭! 🍨🥧🍦</b></a>
+        </li>
+        <li>
+          <a href="practice/hungry/ar.html"><b>② 밥 🍱</b></a>
+        </li>
+        <li>
+          <a href="practice/0515/0515homework.html" target="_blank" title="5월 15일 과제"> <b>③ 0515 과제!</b> </a>
+        </li>
+        <li>
+          <a href="01/ex1-38.html"><b>④ 음악 재생하기 🎶</b></a>
+        </li>
+        <li>
+          <a href="01/ex1-39.html"><b>⑤ 영상 감상하기 📺</b></a>
+        </li>
+        <li>
+          <a href="01/img/path/path.html"><b>⑥ 경로를 재탐색합니다 👓</b></a>
+        </li>
+        <li>
+          <a href="/260526/exam-1.html"><b>⑦ 0522 과제</b></a>
+        </li>
+      </ul>
+    </nav>
+
+    <br />
+    <hr />
+    <br />
+
+    <main>
+      <!-- 3. 메인 : 아티클, 섹션 -->
+      <article>
+        <h2>🤔 0518 과제</h2>
+        <a href="path/img/1.html">
+          <img src="path/img/0518-2.jpeg" alt="0518 작업 이미지" width="300" />
+          <p>⬆ 1 페이지로 바로 가기</p>
+        </a>
+
+        <br />
+        <hr />
+        <br />
+
+        <div>
+          <h2>🎨 사진 모음집</h2>
+          <img src="practice/0513/29.png" alt="전체 이미지" width="200" />
+          &nbsp;
+          <img src="practice/0513/0513.png" alt="0513 기록" width="200" />
+          &nbsp;
+          <img src="practice/0513/full.png" alt="전체 화면" width="200" />
+          &nbsp;
+          <img src="practice/0513/qr.png" alt="QR 코드" width="200" />
+        </div>
+
+        <br />
+      </article>
+
+      <br />
+      <hr />
+      <br />
+
+      <article>
+        <h2>🧭 학습 자료</h2>
+        <section>
+          <table>
+            <tr>
+              <th>📋 HTML 기초 학습 📋</th>
+            </tr>
+            <tr>
+              <td>
+                <a href="docs/html_basics_for_elementary.html"><em>📑 HTML 기본 구조 설명</em></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="01/ex1-4.html"><em>📑 제목태그 : heading</em></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="01/ex1-5.html"><em>📑 문단태그 : Paragraph</em></a>
+              </td>
+            </tr>
+          </table>
+
+          <br />
+
+          <h3>📋 HTML 기초 학습 (리스트)</h3>
+          <ul>
+            <li>
+              <a href="docs/html_basics_for_elementary.html"><em>📑 HTML 기본 구조 설명</em></a>
+            </li>
+            <li>
+              <a href="01/ex1-4.html"><em>📑 제목태그 : heading</em></a>
+            </li>
+            <li>
+              <a href="01/ex1-5.html"><em>📑 문단태그 : Paragraph</em></a>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <br />
+    <hr />
+    <br />
+
+    <footer>
+      <!-- 4. 푸터 -->
+      <p>&copy; 변혜인. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

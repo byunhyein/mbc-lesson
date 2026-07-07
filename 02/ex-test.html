@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+      : root{font-size: 20px;}
+      /* :root (최상위 선택자) */
+      /* :root의 font-size가 20px이면,
+      em의 단위가 16px ➡ 20px로 수정됨 */
+      
+      div {
+        border: 1px solid;
+        font-size: 2em;
+      }
+      span {
+        border: 1px solid red;
+        font-size: 2em;
+      }
+      .rem span {
+        font-size: 2rem;
+      }
+    </style>
+</head>
+<body>
+    <div class="rem">
+      REM = 부모
+      <span>span = 자식</span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건부 연산</title>
+  </head>
+  <body>
+    <script>
+      const now = new Date().getHours(); // 여기서 Date는 "D", 대문자여야 한다
+
+      // now 변수만 얻었다!
+      // const now = new Date().getHours(); 의 기본값은 현재 시각 (아마 컴퓨터 설정상의 현 시각인듯 함).
+      // 지금 시간인 '오전 10:00' 에서 + 2(2시간 더하기) 을 하면 오후로 설정값이 바뀐다.
+      // 하위에 - 오전, 오후 설정을 다르게 주는 변수가 추가되면 상위의 이 사항이 영향을 준다. 이따 하단 변수값참조.
+
+
+      /* 아래는 함께 했던 예제문들 */
+      //   document.write(now.toLocaleTimeString()); // 시간만 가져오기 toLocale"Time"String
+      //   console.log(now);
+      //   document.write(`<hr>${now.getHours()}`)
+
+
+      // 조건식 ()? : 간단한 조건문을 쓸 때 많이 사용하는 연산자.
+      // · 문법 : (조건) ? A :
+      // · 설명 : (조건) ? 참 = 이면 A실행 : 거짓이면 B실행
+
+      // 예시! | (조건식)?true할일:false할일
+      (now < 12) ? (document.querySelector("body").style.background = "yellow") : (document.querySelector("body").style.background = "black");
+
+    </script>
+  </body>

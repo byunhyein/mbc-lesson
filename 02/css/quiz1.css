@@ -1,0 +1,50 @@
+/* 01. 전체 선택자 : 여백 초기화, 웹 브라우저의 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 10px;
+}
+body {
+  padding: 20px;
+}
+
+/* 02. 그룹 선택자 */
+h2,
+span {
+  color: red;
+}
+
+/* 03. 태그 선택자 */
+h1 {
+  background-color: beige;
+}
+
+/* 04. 아이디 선택자 */
+#container {
+  background-color: gainsboro;
+}
+
+/* 05. 클래스 선택자 */
+.tea1 {
+  background-color: beige;
+}
+
+/* 06. 하위 선택자 */
+li p {
+  color: green;
+}
+
+/* 07. 자식 선택자 */
+p > span {
+  color: blue;
+}
+
+/* 08. 형제 선택자 */
+.tea2 + li {
+  color: brown;
+  background-color: white;
+}
+
+/* 09. 인접 선택자 */
+p ~ ul {
+  padding: 30px;
+}

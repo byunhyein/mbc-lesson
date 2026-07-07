@@ -1,0 +1,59 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS 상속이란 */
+/* 상위 요소에 적용한 속성값을 하위요소가 대물림 받는 것.
+주로 font 설정 관련 속성이 상속됨. */
+
+html {
+  color: gray;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 2;
+  border: 5px solid;
+}
+
+/* text-decoration, text-transform */
+
+a {
+  text-decoration: line-through; /* 취소선 */
+  text-decoration: underline; /* 밑줄 */
+  text-decoration: overline; /* 위쪽 줄 */
+  text-decoration: none; /* 없음 */
+}
+
+p {
+  text-transform: uppercase; /* 영문 전체 대문자 전환 */
+  text-transform: lowercase; /* 영문 전체 소문자 전환 */
+  text-transform: capitalize; /* 영문 전체 첫 단어들 대문자 */
+}
+
+/* 첫 번째 a태그 선택 */
+
+li:first-child a {
+  color: red;
+  text-shadow:
+    5px 5px 0px rgba(251, 191, 36, 1),
+    10px 10px 0px rgba(248, 113, 113, 1);
+  color: #1e293b;
+  font-size: 80px;
+  font-weight: 900;
+}
+li:nth-child(2) a {
+  color: white;
+  text-shadow: 4px 2px 4px #000;
+}
+li:nth-child(2) a:hover {
+  text-shadow: 4px 2px 4px #ff9898;
+}
+
+p {
+  text-shadow:
+    1px 1px 1px #e91e63,
+    2px 2px 1px #00ff29;
+}
+
+/* generator, builder, preset, cheatseat */

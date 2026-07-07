@@ -1,0 +1,37 @@
+@charset 'UTF-8';
+/* link로 연결된 css파일 내의 @import 문 */
+@import url("./import.css");
+h1 {
+  color: midnightblue;
+}
+p {
+  color: green;
+}
+* {
+  color: blue;
+}
+
+/* 다시보기 시작 */
+
+h2{color: aliceblue}
+.h2 {color: aliceblue;}
+h2[title="점수"] {color: aliceblue;}
+.h2[title="점수"] {color: aliceblue;}
+h2.h2 [title="점수"] {color: aliceblue;}
+h2#h2 {color: aliceblue;}
+h2#h2 [title="점수"] {color: aliceblue;}
+
+/* 다시보기 끝 */
+
+
+
+h2#h2 {
+  color: purple;
+}
+h2.h2[title="점수"] {
+  color: green;
+}
+h2#h2[title="점수"] {
+  color: black;
+}
+

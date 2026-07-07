@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>혜인이의 미니홈피 🌸</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nanum Gothic', '돋움', Dotum, sans-serif;
+      font-size: 12px;
+      background-color: #c9d9f0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(255,182,193,0.35) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(173,216,230,0.4) 0%, transparent 50%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px 40px;
+    }
+
+    /* 상단 BGM 바 */
+    .bgm-bar {
+      width: 740px;
+      background: linear-gradient(to right, #a8c4e8, #c8dff5);
+      border: 1px solid #85aad4;
+      border-bottom: none;
+      padding: 4px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #2a4a7f;
+      border-radius: 6px 6px 0 0;
+    }
+    .bgm-bar .note { font-size: 14px; }
+    .bgm-bar .play-btn {
+      background: #6a99cc;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      padding: 1px 7px;
+      cursor: pointer;
+      font-size: 10px;
+    }
+    .bgm-bar .song-title { flex: 1; }
+    .bgm-bar .visitor-num { color: #4a6ea0; font-size: 10px; }
+
+    /* 메인 컨테이너 */
+    .container {
+      width: 740px;
+      background: #eef4fc;
+      border: 1px solid #85aad4;
+      border-radius: 0 0 8px 8px;
+      display: grid;
+      grid-template-columns: 175px 1fr;
+      min-height: 560px;
+      box-shadow: 2px 4px 12px rgba(100,140,200,0.25);
+    }
+
+    /* 왼쪽 사이드바 */
+    .sidebar {
+      background: linear-gradient(180deg, #d8eaf8 0%, #c4d8f0 100%);
+      border-right: 1px solid #a8c4e8;
+      padding: 16px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* 프로필 박스 */
+    .profile-box {
+      background: white;
+      border: 1px solid #b0cce8;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    .profile-box .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffd6e8, #b8d8f8);
+      margin: 0 auto 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      border: 3px solid #c8dff5;
+    }
+    .profile-box .name {
+      font-size: 13px;
+      font-weight: bold;
+      color: #2a4a7f;
+      margin-bottom: 4px;
+    }
+    .profile-box .status {
+      font-size: 11px;
+      color: #7a9abf;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+    .profile-box .dday {
+      background: #dceeff;
+      border: 1px dashed #a0c0e0;
+      border-radius: 4px;
+      padding: 3px 0;
+      font-size: 10px;
+      color: #4a7ab0;
+    }
+
+    /* 도토리 & 일촌 */
+    .mini-stats {
+      background: white;
+      border: 1px solid #b0cce8;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+    .mini-stats .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3px 0;
+      border-bottom: 1px dotted #d0e4f4;
+      font-size: 11px;
+      color: #4a6a8a;
+    }
+    .mini-stats .stat-row:last-child { border-bottom: none; }
+    .mini-stats .stat-val { font-weight: bold; color: #2a5a9f; }
+
+    /* 왼쪽 메뉴 */
+    .side-menu {
+      background: white;
+      border: 1px solid #b0cce8;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .side-menu .menu-title {
+      background: linear-gradient(to right, #7aaad4, #5a8abf);
+      color: white;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .side-menu a {
+      display: block;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: #2a4a7a;
+      text-decoration: none;
+      border-bottom: 1px dotted #ddeeff;
+      transition: background 0.1s;
+    }
+    .side-menu a:hover { background: #e8f2fc; }
+    .side-menu a:last-child { border-bottom: none; }
+    .side-menu a .icon { margin-right: 5px; }
+
+    /* 방명록 미리보기 */
+    .side-guestbook {
+      background: white;
+      border: 1px solid #b0cce8;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+    .side-guestbook .gb-title {
+      font-size: 11px;
+      font-weight: bold;
+      color: #3a6aaa;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #cce0f4;
+      padding-bottom: 4px;
+    }
+    .side-guestbook .gb-item {
+      font-size: 10px;
+      color: #5a7aaa;
+      padding: 2px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .side-guestbook .gb-nick { font-weight: bold; color: #2a5a9f; }
+
+    /* 오른쪽 메인 콘텐츠 */
+    .main-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* 탭 메뉴 */
+    .tab-menu {
+      display: flex;
+      gap: 2px;
+      border-bottom: 2px solid #7aaad4;
+    }
+    .tab-menu button {
+      padding: 5px 14px;
+      background: #c8dcf0;
+      border: 1px solid #9abcd8;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      font-size: 11px;
+      color: #3a6a9a;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .tab-menu button.active {
+      background: white;
+      color: #1a3a7a;
+      font-weight: bold;
+      border-color: #7aaad4;
+    }
+
+    /* 다이어리 섹션 */
+    .section-box {
+      background: white;
+      border: 1px solid #b8d0e8;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .section-box .sec-header {
+      background: linear-gradient(to right, #daeafa, #c8ddf4);
+      border-bottom: 1px solid #b0cce8;
+      padding: 6px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-box .sec-header .sec-title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #2a4a8a;
+    }
+    .section-box .sec-header .sec-more {
+      font-size: 10px;
+      color: #6a90c0;
+      text-decoration: none;
+    }
+
+    /* 다이어리 아이템 */
+    .diary-item {
+      padding: 12px;
+      border-bottom: 1px dotted #d8eaf8;
+    }
+    .diary-item:last-child { border-bottom: none; }
+    .diary-item .d-title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #1a3a6a;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    .diary-item .d-title:hover { text-decoration: underline; }
+    .diary-item .d-title .d-icon { margin-right: 4px; }
+    .diary-item .d-body {
+      font-size: 11px;
+      color: #4a6a8a;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+    .diary-item .d-meta {
+      font-size: 10px;
+      color: #8aaac8;
+      display: flex;
+      gap: 10px;
+    }
+    .diary-item .d-meta .emo { font-size: 12px; }
+
+    /* 사진첩 */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding: 12px;
+    }
+    .photo-item {
+      background: linear-gradient(135deg, #e8f4ff, #ffd6ec);
+      aspect-ratio: 1;
+      border-radius: 4px;
+      border: 2px solid #c0d8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-item:hover { transform: scale(1.04); border-color: #7aaad4; }
+    .photo-item .photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(40,80,140,0.6);
+      color: white;
+      font-size: 9px;
+      padding: 2px 4px;
+      text-align: center;
+    }
+
+    /* 방명록 */
+    .guestbook-list { padding: 10px 12px; }
+    .gb-entry {
+      display: flex;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dotted #d0e4f4;
+    }
+    .gb-entry:last-child { border-bottom: none; }
+    .gb-entry .gb-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffc8e0, #a8d8f8);
+      border: 2px solid #c0daf0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .gb-entry .gb-right { flex: 1; }
+    .gb-entry .gb-nick {
+      font-size: 11px;
+      font-weight: bold;
+      color: #2a5a9f;
+      margin-bottom: 2px;
+    }
+    .gb-entry .gb-text {
+      font-size: 11px;
+      color: #4a6a8a;
+      line-height: 1.6;
+    }
+    .gb-entry .gb-date { font-size: 10px; color: #9ab0c8; margin-top: 2px; }
+
+    /* 하단 저작권 */
+    .footer {
+      width: 740px;
+      text-align: center;
+      padding: 10px;
+      font-size: 10px;
+      color: #7a9abf;
+      margin-top: 4px;
+    }
+
+    /* 오늘 방문자 배너 */
+    .visit-banner {
+      width: 740px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid #b0cce8;
+      border-radius: 5px;
+      padding: 5px 12px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 11px;
+      color: #3a6a9a;
+      margin-bottom: 4px;
+    }
+    .visit-banner span b { color: #e05080; }
+
+    /* 별자리 장식 (헤더) */
+    .site-header {
+      width: 740px;
+      padding: 12px 0 6px;
+      text-align: center;
+    }
+    .site-header .title-text {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1a3a7a;
+      text-shadow: 1px 1px 0 #fff, 0 0 12px rgba(100,160,240,0.5);
+      letter-spacing: 2px;
+    }
+    .site-header .subtitle {
+      font-size: 11px;
+      color: #5a8abf;
+      margin-top: 2px;
+    }
+
+    /* 스크롤바 꾸미기 */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: #9abcd8; border-radius: 4px; }
+    ::-webkit-scrollbar-track { background: #daeafa; }
+  </style>
+</head>
+<body>
+
+  <div class="site-header">
+    <div class="title-text">🌸 혜인이의 미니홈피 🌸</div>
+    <div class="subtitle">welcome to my little space on the internet ✨</div>
+  </div>
+
+  <div class="visit-banner">
+    <span>오늘 <b>47</b></span>
+    <span>어제 <b>83</b></span>
+    <span>전체 <b>12,408</b></span>
+  </div>
+
+  <!-- BGM 바 -->
+  <div class="bgm-bar">
+    <span class="note">♪</span>
+    <button class="play-btn">▶ 재생</button>
+    <span class="song-title">IU - 봄 사랑 벚꽃 말고 (현재 재생 중)</span>
+    <span class="visitor-num">🌐 현재 접속자: 3명</span>
+  </div>
+
+  <div class="container">
+
+    <!-- 왼쪽 사이드바 -->
+    <aside class="sidebar">
+
+      <div class="profile-box">
+        <div class="avatar">🐰</div>
+        <div class="name">혜인 (hyein_h)</div>
+        <div class="status">"오늘도 좋은 하루 💙"</div>
+        <div class="dday">🎂 생일까지 D-42</div>
+      </div>
+
+      <div class="mini-stats">
+        <div class="stat-row">
+          <span>🌰 도토리</span>
+          <span class="stat-val">238개</span>
+        </div>
+        <div class="stat-row">
+          <span>👥 일촌</span>
+          <span class="stat-val">56명</span>
+        </div>
+        <div class="stat-row">
+          <span>📷 사진</span>
+          <span class="stat-val">204장</span>
+        </div>
+        <div class="stat-row">
+          <span>📝 다이어리</span>
+          <span class="stat-val">92개</span>
+        </div>
+      </div>
+
+      <div class="side-menu">
+        <div class="menu-title">📁 메뉴</div>
+        <a href="#"><span class="icon">📓</span>다이어리</a>
+        <a href="#"><span class="icon">📷</span>사진첩</a>
+        <a href="#"><span class="icon">🎵</span>BGM 설정</a>
+        <a href="#"><span class="icon">📬</span>방명록</a>
+        <a href="#"><span class="icon">🛒</span>미니룸 꾸미기</a>
+        <a href="#"><span class="icon">💌</span>쪽지 보내기</a>
+        <a href="#"><span class="icon">👥</span>일촌 목록</a>
+      </div>
+
+      <div class="side-guestbook">
+        <div class="gb-title">💬 최근 방명록</div>
+        <div class="gb-item"><span class="gb-nick">별빛지수 :</span> 오랜만에 왔어~ 잘 지내?</div>
+        <div class="gb-item"><span class="gb-nick">구름산책 :</span> 사진 너무 예뻐 ㅠㅠ</div>
+        <div class="gb-item"><span class="gb-nick">토끼달빛 :</span> 다이어리 잘 읽었어 💙</div>
+        <div class="gb-item"><span class="gb-nick">햇살한스푼 :</span> 생일 축하해!!🎉</div>
+      </div>
+
+    </aside>
+
+    <!-- 오른쪽 메인 -->
+    <main class="main-content">
+
+      <div class="tab-menu">
+        <button class="active">📓 다이어리</button>
+        <button>📷 사진첩</button>
+        <button>📬 방명록</button>
+        <button>👥 일촌피드</button>
+      </div>
+
+      <!-- 다이어리 목록 -->
+      <div class="section-box">
+        <div class="sec-header">
+          <span class="sec-title">📓 최근 다이어리</span>
+          <a href="#" class="sec-more">전체보기 ›</a>
+        </div>
+
+        <div class="diary-item">
+          <div class="d-title"><span class="d-icon">🌷</span>오늘 처음으로 카페 혼자 가봤어</div>
+          <div class="d-body">
+            오늘 날씨가 너무 좋아서 혼자 동네 카페에 갔다.
+            창가 자리에 앉아서 아이스 아메리카노 마시면서 책 읽었는데..
+            이게 그 '나만의 시간'이라는 거구나 싶었달까. 🍃
+            별거 아닌데 왠지 뿌듯했어. 앞으로 자주 와야지.
+          </div>
+          <div class="d-meta">
+            <span class="emo">☀️</span>
+            <span>2026.05.28</span>
+            <span>💬 댓글 8</span>
+            <span>❤️ 공감 24</span>
+          </div>
+        </div>
+
+        <div class="diary-item">
+          <div class="d-title"><span class="d-icon">🌙</span>요즘 자꾸 잠이 안 옴</div>
+          <div class="d-body">
+            밤에 누우면 별 생각이 다 드는 거 있잖아... 오늘 있었던 일도 생각나고
+            내일 해야 할 일도 생각나고. 누군가 머릿속 전원 버튼 좀 꺼줬으면 좋겠다 😴
+            따뜻한 우유라도 마셔야 할까.
+          </div>
+          <div class="d-meta">
+            <span class="emo">😴</span>
+            <span>2026.05.25</span>
+            <span>💬 댓글 12</span>
+            <span>❤️ 공감 31</span>
+          </div>
+        </div>
+
+        <div class="diary-item">
+          <div class="d-title"><span class="d-icon">🍜</span>오늘 점심 진짜 맛있었다</div>
+          <div class="d-body">
+            친구랑 학교 앞 새로 생긴 라멘집 갔는데 대박이었음.
+            육수가 진하고 면이 쫄깃쫄깃... 사진도 찍어뒀으니까 사진첩에 올릴게 📸
+            다음엔 다른 메뉴도 먹어봐야지.
+          </div>
+          <div class="d-meta">
+            <span class="emo">😋</span>
+            <span>2026.05.22</span>
+            <span>💬 댓글 5</span>
+            <span>❤️ 공감 18</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 사진첩 미리보기 -->
+      <div class="section-box">
+        <div class="sec-header">
+          <span class="sec-title">📷 최근 사진</span>
+          <a href="#" class="sec-more">전체보기 ›</a>
+        </div>
+        <div class="photo-grid">
+          <div class="photo-item">🌸<div class="photo-caption">봄 나들이</div></div>
+          <div class="photo-item">☕<div class="photo-caption">카페 감성</div></div>
+          <div class="photo-item">🍜<div class="photo-caption">오늘 점심</div></div>
+          <div class="photo-item">🌅<div class="photo-caption">노을 뷰</div></div>
+          <div class="photo-item">🐱<div class="photo-caption">길냥이</div></div>
+          <div class="photo-item">🌿<div class="photo-caption">공원 산책</div></div>
+          <div class="photo-item">🎵<div class="photo-caption">콘서트!</div></div>
+          <div class="photo-item">🍰<div class="photo-caption">케이크</div></div>
+        </div>
+      </div>
+
+      <!-- 방명록 미리보기 -->
+      <div class="section-box">
+        <div class="sec-header">
+          <span class="sec-title">📬 방명록</span>
+          <a href="#" class="sec-more">전체보기 ›</a>
+        </div>
+        <div class="guestbook-list">
+          <div class="gb-entry">
+            <div class="gb-avatar">🌟</div>
+            <div class="gb-right">
+              <div class="gb-nick">별빛지수</div>
+              <div class="gb-text">오랜만이야~ 다이어리 보고 있어. 카페 혼자 간 거 나도 해봐야겠다ㅋㅋ 잘 지내!</div>
+              <div class="gb-date">2026.06.01</div>
+            </div>
+          </div>
+          <div class="gb-entry">
+            <div class="gb-avatar">🐝</div>
+            <div class="gb-right">
+              <div class="gb-nick">꿀벌하나</div>
+              <div class="gb-text">홈피 분위기 너무 예쁘다 💙 자주 올게!</div>
+              <div class="gb-date">2026.05.30</div>
+            </div>
+          </div>
+          <div class="gb-entry">
+            <div class="gb-avatar">🌙</div>
+            <div class="gb-right">
+              <div class="gb-nick">달빛산책</div>
+              <div class="gb-text">잠 못 자는 거 나도 완전 공감... 우리 같이 힘내자ㅜㅜ</div>
+              <div class="gb-date">2026.05.26</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="footer">
+    © 2026 혜인이의 미니홈피 🌸 · since 2024 · skin by me ·
+    <a href="#" style="color:#7a9abf">로그인</a>
+  </div>
+
+</body>
+</html>

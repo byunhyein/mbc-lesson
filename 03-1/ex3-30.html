@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 1. 함수 기본형 */
+
+      function 믹서기(params) {
+        // 기능 (= 실행문을 쓰는 자리)
+        console.log("메론" + "바나나");
+      }
+      /* 함수는 예약된 기능이라, 선언 후 아무 버튼도 누르지 않으면 동작하지 않는다.
+      (console.log만 적어둔 상태에서는 아무것도 되지 않는다는 뜻) */
+
+      // 함수의 호출 : 함수()
+      믹서기();
+      믹서기();
+      믹서기();
+      믹서기();
+      믹서기();
+    </script>
+
+    <script>
+      /* 2. 매개 변수 */
+
+      function 믹서기2(과일1, 과일2) {// 함수가 전달받는 내용은 "매개 변수"
+        console.log(`😁 ${과일1 + 과일2}`);
+      }
+      믹서기2("사과", "바나나"); // 호출하는 쪽에서 전달하는 내용은 "인수"
+      믹서기2("수박", "바나나");
+      믹서기2("딸기", "바나나");
+      믹서기2("키위", "망고");
+      믹서기2("사과", "바나나");
+    </script>
+</body>
+</html>
+

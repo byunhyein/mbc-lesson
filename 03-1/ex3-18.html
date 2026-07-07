@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건부 연산</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("회원가입 여부를 입력하세요", "회원, 비회원"); // 쉼표 뒤의 "내용" 은 가이드 텍스트.
+      input === "회원" ? document.write("<h1>회원님, 안녕하세요</h1>") : document.write("<h1>회원가입을 진행해주세요.</h1>"); // 물음표 옆의 조건식이 단순할 경우엔 ㅡ 현재 "회원" 과 같이, 소괄호 생략 가능
+    </script>
+  </body>
+</html>

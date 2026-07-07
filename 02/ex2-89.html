@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>중단점과 모바일 우선</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .card {
+        padding: 20px;
+        background-color: #3689ff;
+        color: #fff;
+        text-align: center;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        /* 기본값 : 1행 4열 */
+      }
+      @media (min-width: 768px) {
+        /* 모든 디바이스에 범용적으로 적용되는 "media" */
+        /* 디바이스의 종류를 쓰지 않았을 때는, 'and' 라는 연산자를 쓰지 않아도 된다. */
+
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+          /* 모니터 너비가 769px 부터는 한 행에 1셀로 놓여져 있던 아이템박스들이 한 행에 2셀로 정렬됨 */
+          /* 2행 2열 */
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .cards {
+          grid-template-columns: repeat(4, 1fr);
+          /* 4행 1열... 이라고 해야할까?? */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cards">
+      <div class="card">1</div>
+      <div class="card">2</div>
+      <div class="card">3</div>
+      <div class="card">4</div>
+    </div>
+  </body>
+</html>

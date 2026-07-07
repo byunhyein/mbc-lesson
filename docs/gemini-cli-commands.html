@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini CLI 슬래시 명령어 가이드</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --bg-color: #f8f9fa;
+            --text-color: #202124;
+            --border-color: #dadce0;
+            --code-bg: #f1f3f4;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #1a73e8;
+            border-left: 5px solid #1a73e8;
+            padding-left: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: #f1f3f4;
+            font-weight: 600;
+        }
+        code {
+            background-color: var(--code-bg);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #d93025;
+            font-weight: bold;
+        }
+        .category-desc {
+            font-style: italic;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gemini CLI 슬래시 명령어 가이드</h1>
+        <p>Gemini CLI에서 사용할 수 있는 주요 슬래시 명령어 목록입니다.</p>
+
+        <h2>일반 및 세션 관리</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>명령어</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>/about</code></td><td>버전 정보를 표시합니다.</td></tr>
+                <tr><td><code>/help</code> (또는 <code>/?</code>)</td><td>도움말 정보를 표시합니다.</td></tr>
+                <tr><td><code>/quit</code> (또는 <code>/exit</code>)</td><td>Gemini CLI를 종료합니다.</td></tr>
+                <tr><td><code>/chat</code> (또는 <code>/resume</code>)</td><td>세션 및 체크포인트를 관리합니다.</td></tr>
+                <tr><td><code>/clear</code></td><td>터미널 화면과 세션 기록을 지웁니다.</td></tr>
+                <tr><td><code>/stats</code></td><td>세션, 모델, 도구의 사용 통계를 표시합니다.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>설정 및 외관</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>명령어</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>/settings</code></td><td>대화형 설정 편집기를 엽니다.</td></tr>
+                <tr><td><code>/theme</code></td><td>시각적 테마를 변경합니다.</td></tr>
+                <tr><td><code>/editor</code></td><td>지원되는 에디터를 선택합니다.</td></tr>
+                <tr><td><code>/terminal-setup</code></td><td>터미널 키바인딩을 구성합니다.</td></tr>
+                <tr><td><code>/vim</code></td><td>Vim 입력 모드를 토글합니다.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>워크플로우 및 작업 공간 제어</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>명령어</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>/directory</code> (또는 <code>/dir</code>)</td><td>작업 공간 디렉토리를 관리합니다.</td></tr>
+                <tr><td><code>/plan</code></td><td>계획 모드(Plan Mode)로 전환하거나 현재 계획을 봅니다.</td></tr>
+                <tr><td><code>/rewind</code></td><td>대화 기록을 뒤로 돌려 이전 상태로 복구합니다.</td></tr>
+                <tr><td><code>/restore</code></td><td>파일을 특정 도구 실행 전 상태로 복구합니다.</td></tr>
+                <tr><td><code>/init</code></td><td>현재 디렉토리를 분석하여 GEMINI.md 파일을 생성합니다.</td></tr>
+                <tr><td><code>/memory</code></td><td>GEMINI.md 파일의 컨텍스트를 관리합니다.</td></tr>
+                <tr><td><code>/shells</code></td><td>백그라운드 쉘 보기를 토글합니다.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>확장 및 에이전트 관리</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>명령어</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>/agents</code></td><td>로컬 및 원격 서브 에이전트를 관리합니다.</td></tr>
+                <tr><td><code>/extensions</code></td><td>Gemini CLI 확장을 관리합니다.</td></tr>
+                <tr><td><code>/skills</code></td><td>에이전트 스킬을 관리합니다.</td></tr>
+                <tr><td><code>/mcp</code></td><td>Model Context Protocol(MCP) 서버를 관리합니다.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>모델 및 성능</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>명령어</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>/model</code></td><td>사용할 모델 구성을 관리합니다.</td></tr>
+                <tr><td><code>/compress</code></td><td>토큰 절약을 위해 대화 내용을 요약본으로 대체합니다.</td></tr>
+                <tr><td><code>/tools</code></td><td>사용 가능한 도구 목록을 표시합니다.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>유틸리티 및 지원</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>명령어</th>
+                    <th>설명</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>/auth</code></td><td>인증 방법을 변경합니다.</td></tr>
+                <tr><td><code>/bug</code></td><td>버그 리포트를 작성합니다.</td></tr>
+                <tr><td><code>/copy</code></td><td>마지막 출력을 클립보드에 복사합니다.</td></tr>
+                <tr><td><code>/docs</code></td><td>브라우저에서 공식 문서를 엽니다.</td></tr>
+                <tr><td><code>/upgrade</code></td><td>Gemini Code Assist 업그레이드 페이지로 이동합니다.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1 class="text">title</h1>
+    <script>
+      // 자바스크립트!
+      console.log(1 + 1); // 콘솔 창에 로그를 출력하라는 뜻
+      console.log("자바스크립트를 넣는 법");
+
+      document.write('<h1 class="btn">click</h1>');
+
+      // document.querySelector('btn') // 클래스 btn을 선택한 것!
+      document.querySelector(".btn").onclick = function () {
+        document.querySelector(".text").style.color = "red";
+        document.querySelector("body").style.background = "pink";
+      };
+    </script>
+  </body>
+</html>

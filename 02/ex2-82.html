@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Grid Layout : auto-fit / auto-fill (칸 개수 자동 채움)</title>
+    <style>
+      .container {
+        width: 800px;
+        /* width 값을 정해진 정수로 준다면, container를 감싸는 브라우저의 크기가 800px보다 작아지더라도 반응형으로 줄어들지 않는다. */
+
+        width: min(100%, 800px);
+        /* (100% = 1920px) 과 800px 보다 더 작은 크기가 container의 크기가 된다 */
+
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        display: grid;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .items {
+        border: 1px solid #222;
+        padding: 10px;
+        font-size: 20px;
+        text-align: center;
+      }
+      .items:nth-child(odd) {
+        background-color: #d6faff;
+      }
+      .items:nth-child(even) {
+        background-color: #00b7ff;
+      }
+
+      .container-1 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      /* 작성요령 ➡ repeat (반복개수, 크기) */
+      /* fr = 프레션? 프렉션 | 분수 */
+      /* repeat(3,1fr); ➡ 3분의 1 비율로 행 너비가 지정. 한 행에 3칸 (3셀) 씩 반복. */
+
+      .container-1 {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+      /* auto-fit : 한 행에 얼마나 반복될 지 정하지 못했음; 그러니일단 fit _ 자동으로 부모의 너비에 꽉 채워. */
+      /* minmax(100px,1fr) : 크기도 못 정했지만  */
+
+      .container-2 {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        /* auto-fill은 감싸고 있는 부모를 계산하는 것이 아닌, 자신에게 입력된 "minmax(100px, 1fr)" 값에만 맞춰서. */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>auto-fit일 때</h1>
+    <div class="container container-1">
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">3</div>
+      <div class="items">4</div>
+      <div class="items">5</div>
+    </div>
+
+    <h1>auto-fill일 때</h1>
+    <div class="container container-2">
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">3</div>
+      <div class="items">4</div>
+      <div class="items">5</div>
+    </div>
+  </body>
+</html>

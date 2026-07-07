@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>heartbeat</title>
+    <style>
+      .heart {
+        font-size: 100px;
+        color: pink;
+        text-align: center;
+        animation-name: beat; /* 애니메이션 네임 : 네이밍 규칙에 맞게만 이름을 직접 지으면 된다 */
+
+        animation-duration: 3s;
+
+        animation-iteration-count: 5; /* 입력한 숫자만큼 일정 반복 횟수가 지정됨 */
+        animation-iteration-count: infinite; /* 무한 반복 재생은 infinite */
+
+        animation-fill-mode: forwards;
+        animation-direction: alternate; /* 애니메이션이 재생 - 되감기를 계속 반복 */
+
+        animation-timing-function: ease; /* 가속도 조절 */
+        animation-timing-function: cubic-bezier(1, -1.37, 0.58, 1); /* 원하는 값 Devtools 에서 찾아서 복붙해도 됨 */
+
+        animation-play-state: paused; /* 애니메이션 재생 상태 : 멈춤 */
+
+        user-select: none; /* 글자 드래그 안 되게 */
+      }
+
+      .heart:active {
+        animation-play-state: running; /* 애니메이션 재생 상태 : 마우스로 누르고 있을 때 (누르는 걸 떼면 안됨) 애니메이션 재생 */
+      }
+
+      /* @keyframes + '내가 만든 애니메이션 이름' {'시간의 흐름에 따라서 변경될 값 작성'} */
+      @keyframes beat {
+        0% {
+          /* 0% 일 때 트랜스폼의 스케일 속성을 0.5로*/
+          transform: scale(0.5);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        52.5% {
+          transform: scale(0.9);
+        }
+        55% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart">❤</div>
+  </body>
+</html>
