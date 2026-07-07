@@ -14,16 +14,33 @@
     <!-- style 00 : 전체 정렬 -->
     <style>
       body {
+        margin: 0;
+        padding: 24px 20px 40px;
         text-align: center;
+        background: linear-gradient(180deg, #fffdf8 0%, #fef7ea 100%);
+        color: #4d3a2b;
       }
-      li {
-        margin: auto;
+      header,
+      nav,
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      header {
+        padding: 24px 0 10px;
+      }
+      nav {
+        padding: 12px 0 6px;
       }
       table {
         margin: auto;
       }
       hr {
-        border: 1px dashed gainsboro;
+        border: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #f3c98d, transparent);
+        margin: 24px auto;
+        width: 70%;
       }
     </style>
 
@@ -112,7 +129,7 @@
       /* a태그 */
       a {
         text-decoration: none;
-        color: black;
+        color: #4d3a2b;
       }
       a:hover {
         text-decoration: underline dashed rgb(255, 162, 178);
@@ -121,18 +138,47 @@
         color: cornflowerblue;
       }
 
-      /* li */
-      li {
-        background-color: lavenderblush;
-        width: 300px;
-        margin-bottom: 10px;
-        font-size: 1em;
-        list-style-type: none;
+      /* 내비게이션 카드 */
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 12px;
+        justify-items: center;
+      }
+      nav li {
+        width: min(100%, 360px);
+        margin: 0;
+        padding: 12px 14px;
+        background: #fffaf2;
+        border: 1px solid #f0d7b7;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(117, 92, 63, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      nav li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(117, 92, 63, 0.14);
+      }
+      nav li small {
+        color: #8e6e43;
       }
 
       /* 푸터 */
       footer {
         color: rgb(159, 167, 179);
+      }
+
+      .section-note {
+        margin: 8px auto 0;
+        color: #8b6d46;
+        font-size: 0.95rem;
+      }
+
+      .section-divider {
+        margin: 28px auto;
+        width: 55%;
       }
     </style>
 
@@ -251,7 +297,15 @@
     <nav>
       <!-- 2. 내비 -->
       <h2>🥁 내비게이션</h2>
+      <p class="section-note">📌 학습 흐름과 과제 링크를 한눈에 확인해 보세요.</p>
       <ul>
+        <li>
+          <a href="homeworksession/homeworksession.html">
+            <b>📚 Homework Session</b>
+            <br />
+            <small>과제·학습 자료 페이지로 이동</small>
+          </a>
+        </li>
         <li class="figma1">
           <a href="figma/cafe.html"
             ><img src="figma/img/cookieglaze.png" alt="확인쿠키" width="80" />
@@ -286,6 +340,8 @@
     <br />
     <hr />
     <br />
+
+    <hr class="section-divider" />
 
     <main>
       <!-- 3. 메인 : 아티클, 섹션 -->
@@ -348,6 +404,9 @@
       <hr />
       <br />
 
+      <p class="section-note">🖼️ 작업물과 사진 모음도 이어서 확인할 수 있어요.</p>
+      <hr class="section-divider" />
+
       <article>
         <h2>🤔 0518 과제</h2>
         <a href="path/img/1.html">
@@ -376,6 +435,8 @@
       <br />
       <hr />
       <br />
+
+      <hr class="section-divider" />
 
       <article>
         <h2>🧭 학습 자료</h2>
