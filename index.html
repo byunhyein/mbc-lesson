@@ -217,6 +217,19 @@
         border-radius: 999px;
         font-size: 0.9em;
       }
+
+      .summary-card ul {
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .summary-card li {
+        width: auto;
+        background: none;
+        margin-bottom: 6px;
+        list-style: disc;
+        font-size: 0.95em;
+      }
     </style>
   </head>
 
@@ -278,57 +291,55 @@
       <!-- 3. 메인 : 아티클, 섹션 -->
       <article class="summary-section">
         <h2>📚 프로젝트 요약 페이지</h2>
-        <p>이 사이트는 HTML, CSS, JavaScript, 피그마 실습과 미니 프로젝트를 한눈에 볼 수 있도록 정리한 학습 포트폴리오입니다.</p>
+        <p>01, 02, 03, 03-1 폴더의 예제를 기준으로, 각 단계에서 무엇을 학습했는지 대표 파일과 함께 정리한 섹션입니다.</p>
 
         <div class="summary-grid">
           <section class="summary-card">
-            <h3>01. HTML 기초</h3>
-            <p>문서 구조, 제목·문단 태그, 이미지와 미디어, 경로 연결 실습을 확인할 수 있습니다.</p>
-            <div class="summary-links">
-              <a href="01/ex1-4.html">제목태그</a>
-              <a href="01/ex1-38.html">음악재생</a>
-              <a href="01/ex1-39.html">영상감상</a>
-            </div>
+            <h3>01. HTML 기본 실습</h3>
+            <p>문서 구조, 제목·문단, 이미지, 오디오·비디오, 폼 요소와 경로를 익히는 예제들입니다.</p>
+            <ul>
+              <li><a href="01/ex1-4.html">제목·문단 태그</a></li>
+              <li><a href="01/ex1-9.html">이미지 태그</a></li>
+              <li><a href="01/ex1-24.html">폼 요소</a></li>
+              <li><a href="01/ex1-38.html">오디오 재생</a></li>
+              <li><a href="01/ex1-39.html">비디오 재생</a></li>
+            </ul>
           </section>
 
           <section class="summary-card">
-            <h3>02. CSS 디자인</h3>
-            <p>내부·외부 스타일시트, 레이아웃, 색상과 폰트, 퀴즈 과제를 통해 스타일링을 익힐 수 있습니다.</p>
-            <div class="summary-links">
-              <a href="02/ex2-1.html">CSS 적용</a>
-              <a href="02/layout1.html">레이아웃</a>
-              <a href="02/quiz6.html">퀴즈</a>
-            </div>
+            <h3>02. CSS 선택자와 레이아웃</h3>
+            <p>선택자, 박스모델, 텍스트/배경 속성, 플렉스와 그리드, 반응형 레이아웃까지 다룬 실습입니다.</p>
+            <ul>
+              <li><a href="02/ex2-1.html">CSS 적용 방법</a></li>
+              <li><a href="02/ex2-13.html">선택자 실습</a></li>
+              <li><a href="02/ex2-35.html">display와 박스 속성</a></li>
+              <li><a href="02/ex2-63.html">flex 레이아웃</a></li>
+              <li><a href="02/ex2-80.html">grid 레이아웃</a></li>
+            </ul>
           </section>
 
           <section class="summary-card">
-            <h3>03. JavaScript</h3>
-            <p>콘솔 출력, DOM 조작, 클릭 이벤트와 간단한 동작을 실습한 예제들이 모여 있습니다.</p>
-            <div class="summary-links">
-              <a href="03/ex3-1.html">자바스크립트</a>
-              <a href="03/ex3-15.html">예제</a>
-              <a href="03/ex3-16.html">응용</a>
-            </div>
+            <h3>03. JavaScript 기초</h3>
+            <p>콘솔 출력, DOM 조작, 클릭 이벤트와 간단한 자바스크립트 동작을 익히는 예제입니다.</p>
+            <ul>
+              <li><a href="03/ex3-1.html">JS 삽입과 DOM 조작</a></li>
+              <li><a href="03/ex3-3.html">문서 출력 실습</a></li>
+              <li><a href="03/ex3-4.html">기본 예제</a></li>
+              <li><a href="03/ex3-15.html">실습 예제</a></li>
+              <li><a href="03/ex3-16.html">응용 예제</a></li>
+            </ul>
           </section>
 
           <section class="summary-card">
-            <h3>실습 & 미니프로젝트</h3>
-            <p>QR 코드, 밥·음식 소개, 피그마로 만든 카페 페이지 등 다양한 실습 결과를 확인할 수 있습니다.</p>
-            <div class="summary-links">
-              <a href="practice/0513/qr.html">QR</a>
-              <a href="practice/hungry/ar.html">밥</a>
-              <a href="figma/cafe.html">CAFEIN</a>
-            </div>
-          </section>
-
-          <section class="summary-card">
-            <h3>자료 & 가이드</h3>
-            <p>HTML 기본 개념, 폼 가이드, 클래스·아이디 설명 등 학습 참고자료를 정리해 두었습니다.</p>
-            <div class="summary-links">
-              <a href="docs/html_basics_for_elementary.html">HTML 가이드</a>
-              <a href="docs/form_guide.html">폼 가이드</a>
-              <a href="docs/ex03-class-id-guide.html">클래스/아이디</a>
-            </div>
+            <h3>03-1. 조건문·반복문·함수</h3>
+            <p>조건문, 삼항 연산자, switch, 반복문과 함수 활용을 연습한 심화 예제입니다.</p>
+            <ul>
+              <li><a href="03-1/ex3-17.html">조건부 연산</a></li>
+              <li><a href="03-1/ex3-18.html">if 조건문</a></li>
+              <li><a href="03-1/ex3-21.html">3의 배수 판별</a></li>
+              <li><a href="03-1/ex3-27.html">구구단</a></li>
+              <li><a href="03-1/함수.html">함수 활용</a></li>
+            </ul>
           </section>
         </div>
       </article>
