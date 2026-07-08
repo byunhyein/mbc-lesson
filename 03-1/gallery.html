@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gallery</title>
+    <style>
+      .galleryWrap * {
+        user-select: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="galleryWrap">
+      <h1>이미지 넘기기</h1>
+
+      <a href="#" onclick="prev()">&lt;</a>
+      <!-- "prev" 라고 이름붙인 버튼을 누르면 어떤 일이 일어난다 -->
+
+      <img src="img/img1.jpg" alt="" width="300" height="200" id="pic" />
+      <!-- 메인 이미지 -->
+
+      <a href="#" onclick="next()">&gt;</a>
+      <!-- "아직 다음 버튼은 함수값을 할당하지 않았다..." -->
+    </div>
+
+    <script>
+      let num = 1; // num 변수를 1로 설정.
+
+      let a = document.querySelector("#pic");
+      function prev() {
+        console.log("click");
+        // "prev" 라고 이름 붙인 버튼을 "click" 하면 아래와 같은 일이 일어난다
+
+        // document.body.style.background = "gray";
+        // document.querySelector("h1").style.color = "red";
+        /* console.log(a.width); // devtools console창 확인해보면 - a에 할당한 #pic의 width값이 나옴! */
+
+        num--;
+        if (num < 1) {
+          num = 7;
+        }
+        let a = document.querySelector("#pic"); // 쿼리셀렉터로 얻어온 id #pic의 값을 변수 a에 넣을게요
+        a.src = `img/img${num}.jpg`; // 템플릿 리터럴리 | {중괄호} 안에는 숫자 '1'을 가진 변수 "num" 이 들어간다... | `백틱` 안의 내용은 띄어쓰기 절대 주의하기.
+
+        console.log(a.src);
+      }
+
+      function next() {
+        console.log("click");
+        num++;
+        if (num > 7) {
+          num = 1;
+        }
+        // let a = document.querySelector("#pic");
+        a.src = `img/img${num}.jpg`;
+        console.log(a.src);
+      }
+    </script>
+  </body>
+</html>
