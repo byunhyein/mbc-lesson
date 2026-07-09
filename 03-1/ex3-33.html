@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>호이스팅</title>
+  </head>
+  <body>
+    <script>
+      addNumber();
+      // const addNumber = function addNumber() {... | 이렇게 쓰면 콘솔창에 안나옴
+      // 태어나기도 전에 이름을 알아듣는 함수 : 호이스팅
+      function addNumber() {
+        //실행문
+        console.log(1 + 2);
+      }
+    </script>
+
+    <script>
+      /*
+      - 변수나 함수의 유효 범위 -> score
+      - 코드 블록 내에 선언된 변수 -> 지역 변수
+      - 값의 재할당이 가능한 변수 -> var, let
+      */
+
+      var sum = '전역 변수';
+      // sum을 중괄호 없이, script 안에서 선언하다
+
+      function addNumber1() {
+        sum = 10 + 20;
+        // 위에도 var sum = 이 있는데??
+        // 위의 섬 (sum) 과 여기의 섬은 알맹이가 다르다.
+      }
+
+      addNumber1();
+      console.log(sum);
+    </script>
+
+    <script>
+      var x = 10;
+
+      function displayNumber() {
+        console.log("x is " + x);
+        console.log("y is " + y);
+        var y = 20;
+      }
+      displayNumber();
+    </script>
+  </body>
+</html>

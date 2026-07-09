@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>콜백 함수의 종류</title>
+  </head>
+  <body>
+    <h1>시간 이후</h1>
+    <pre>
+      setTimeout(콜백 함수, 시간)
+      지정된 시간 이후 함수 호출
+    </pre>
+    <script>
+      /* 함수로 묶어서 해야~ 지정된 시간에 호출이 된다! */
+
+      // 짱신기하네, 6초 지나니까 6초 지남으로 페이지가 바뀐다
+      // setTimeout(() => document.write("6초 지남"), 6000);
+
+      // const timer1 = () => document.write("6초 지남");
+      // setTimeout(timer1, 6000);
+
+      let num = 10;
+      const timer1 = () => document.write(`${num}초 지남`);
+      const stop1 = setTimeout(timer1, num * 1000);
+      clearTimeout(stop1); // clearTimeout 함수 안에 stop1을 매개변수로 넣으면, setTimeout이 취소된다.
+    </script>
+
+    <h1>간격 실행</h1>
+    <pre>
+      // 문법
+      setInterval(콜백 함수, 시간)
+      clearInterval(timeoutID : setInterval 함수의 식별 아이디_이름을 부여해야 함)
+    </pre>
+    <script>
+      let n = 1;
+      const timer2 = () => document.write(`${n}초마다 실행<br>`)
+      setInterval(timer2, n*1000);
+      const stop2 = setInterval(timer2, n*1000)
+      clearInterval(stop2)
+    </script>
+
+    <!-- requestAnimationFrame() 이름이 왤캐길어 -->
+    <!-- setInterval의 신상이다! -->
+     
+
+  </body>
+</html>

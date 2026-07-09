@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>콜백 함수 01</title>
+  </head>
+  <body>
+    <script>
+      // 내 화살표 함수 스니펫 : arr 이에요!
+      const menu = () => {
+        return console.log("떡볶이");
+      };
+
+      /* cb : 콜백 함수 | 전달받을 때 함수가 들어가야 함 */
+      // callback은 다른 함수에 함수를 호출하는 것. 인자의 값으로 함수를 호출하는 것이 "콜백" 이다.
+      // *foreach는 매개변수에 "콜백" 함수를 꼭 써야한다.
+
+      const lunch = (cb) => {
+        cb();
+      };
+      lunch(menu);
+    </script>
+  </body>
+</html>
+
