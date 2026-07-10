@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일반 함수의 this</title>
+  </head>
+  <body>
+    <script>
+      // 일반 함수의 this
+      const user1 = {
+        name: "철수",
+        sayHi: function () {
+          console.log("안녕 " + this.name); // this는 user1 객체 | 거시기...? 그, 저, 거기, 저기, 그뭐야 같은 거
+        },
+      };
+      user1.sayHi(); // '안녕 철수'
+
+      // 화살표 함수의 this
+      const user2 = {
+        name: "영희",
+        sayHi: () => {
+          console.log("안녕 " + this.innerHeight); // this는 상위 스코프의 this
+        //   window 에는 name이란 속성이 없어서 this.name 이라는 변수를 썼을 땐 "안녕" 밖에 출력되지 않았던 것
+          
+        },
+      };
+      user2.sayHi(); // '안녕 undefined'
+    </script>
+  </body>
+</html>
